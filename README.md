@@ -8,11 +8,11 @@ Here you can learn a little bit about me, see some of my recent projects, and ge
 https://thoughtful-travels-7oleygwkt.now.sh https://jc-t-travels.now.sh/
 
 ## Tech Stack:
-Javascript
-React
-Node
-Express
-Knex
+- Javascript
+- React
+- Node
+- Express
+- Knex
 
 ## Server side:
 Repo: https://github.com/jordanxcast/thoughtful-travels-server
