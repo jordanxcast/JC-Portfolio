@@ -1,3 +1,26 @@
+# JC-Portfolio
+
+Welcome to my Portfolio! 
+
+Here you can learn a little bit about me, see some of my recent projects, and get in touch. I love to collaborate on projects with people so please feel free to reach out. 
+
+## Deployed App:
+https://thoughtful-travels-7oleygwkt.now.sh https://jc-t-travels.now.sh/
+
+## Tech Stack:
+Javascript
+React
+Node
+Express
+Knex
+
+## Server side:
+Repo: https://github.com/jordanxcast/thoughtful-travels-server
+
+## Screenshots:
+Coming soon!
+   
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,4 +89,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# JC-Portfolio
