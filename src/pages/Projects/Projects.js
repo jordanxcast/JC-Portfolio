@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../Header/Header';
-import ProjectItem from '../ProjectItem/ProjectItem'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
+import ProjectItem from '../../components/ProjectItem/ProjectItem'
 
 function Projects(props) {
   return(
     <>
-      <Header 
-        title='Projects'
-      />
+      <PageTitle align='left'>
+        Projects
+      </PageTitle>
 
       <section>
         <ProjectItem 

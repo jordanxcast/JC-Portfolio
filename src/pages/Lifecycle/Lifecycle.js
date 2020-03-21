@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../Header/Header'
+import { PageTitle } from '../../components/PageTitle/PageTitle'
 
 function Lifecycle(props) {
   return(
     <>
-      <Header 
-        title='Portfolio Lifecycle'
-      />
+     <PageTitle>
+       Portfolio Lifecycle
+     </PageTitle>
 
       <section className='Portfolio_LC Assumptions'> 
         <div className='Portfolio_LC_subhead'>

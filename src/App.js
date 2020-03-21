@@ -1,20 +1,18 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
-import Home from './components/Home/Home'
-import Projects from './components/Projects/Projects'
-import Contact from './components/Contact/Contact'
-import Experience from './components/Resume/Resume'
-import About from './components/About/About'
-import Lifecycle from './components/Lifecycle/Lifecycle'
-import './App.css';
+import Home from './pages/Home/Home'
+import Projects from './pages/Projects/Projects'
+import Contact from './pages/Contact/Contact'
+import Experience from './pages/Experience/Experience'
+import About from './pages/About/About'
+import Lifecycle from './pages/Lifecycle/Lifecycle'
+// import './App.css';
 
 function App() {
   return (
     <>
-      <nav>
-        <NavBar />
-      </nav>
+      <NavBar />
       <main className="App">
         <Switch>
           <Route 
@@ -29,7 +27,7 @@ function App() {
           />
           <Route 
             exact
-            path='/resume'
+            path='/experience'
             component={Experience}
           />
           <Route 

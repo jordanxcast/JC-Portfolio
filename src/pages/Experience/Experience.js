@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../Header/Header';
-import ExperienceItem from '../ExperienceItem/ExperienceItem'
+import { PageTitle } from '../../components/PageTitle/PageTitle';
+import ExperienceItem from '../../components/ExperienceItem/ExperienceItem'
 
 function Experience(props) {
   return(
     <>
-      <Header 
-        title='Experience'
-      />
+      <PageTitle>
+        Experience
+      </PageTitle>
 
       <section className='Experience_skills'>
         <h2>Skills</h2>

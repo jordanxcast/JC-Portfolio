@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../Header/Header'
-import LinkItem from '../LinkItem/LinkItem'
+import LinkItem from '../../components/LinkItem/LinkItem'
+import { PageTitle } from '../../components/PageTitle/PageTitle';
 
 function Contact(props) {
   return(
     <>
-      <Header 
-        title='Get In Touch'
-      />
+      <PageTitle>
+        Get In Touch
+      </PageTitle>
 
       <form>
         <label htmlFor='contact_name'></label>
