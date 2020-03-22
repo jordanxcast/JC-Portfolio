@@ -11,6 +11,7 @@ export const MenuWrapper = styled.div`
   z-index: -1;
   width: 180px;
   padding: 20px;
+  box-shadow: 0px 4px 6px #000000;
 `; 
 
 export const MenuLink = styled.a`

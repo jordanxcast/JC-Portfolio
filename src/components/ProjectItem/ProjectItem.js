@@ -1,31 +1,34 @@
 import React from 'react';
-import {ProjectTitle} from './ProjectItem.style'
+import {ProjectTitle, ProjectImage, ProjectTech, ProjectDesc, ProjectLink} from './ProjectItem.style'
 
 function  ProjectItem(props){
   return (
     <>
-      <ProjectTitle className='PI_title'>
+      <ProjectTitle>
         {props.proj_title}
       </ProjectTitle>
 
-      <img src={props.img_src} alt={props.img_alt}/>
+      <ProjectImage src={props.img_src} alt={props.img_alt}/>
 
-      <div className='PI_tech'>
-        <a href={props.repo_href} className='PI_tech_subtitles'>
-          Repo
-        </a>
-        <a href={props.live_href} className='PI_tech_subtitles'>
-          Live
-        </a>
-        <p className='PI_tech_subtitles'>Tech</p>
-          <div className='PI_tech_stack'>
-          {props.stack}
-          </div>
-      </div>
+      <div style={{display: 'flex', flexDirection: 'row', marginTop: '20px'}}>
+        <ProjectTech>
+          <ProjectLink href={props.repo_href}>
+            Repo
+          </ProjectLink>
+          <ProjectLink href={props.live_href}>
+            Live
+          </ProjectLink>
+          <p style={{marginTop: '0px'}}> Tech </p>
+            <div>
+              {props.stack}
+            </div>
+        </ProjectTech>
 
-      <div className='PI_description'>
-        {props.desc}
+        <ProjectDesc>
+          {props.desc}
+        </ProjectDesc>
       </div>
+      
     </>
   );
 }

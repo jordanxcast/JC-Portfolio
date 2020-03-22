@@ -3,9 +3,9 @@ import { colors } from './constant_styles'
 
 export const PageWrapper = styled.div`
   background-color: ${props => props ? props.bgColor : colors.offwhite };
-  margin: 0;
+  margin: 0px;
   padding: 30px;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-content: ${({alignContent}) => alignContent ? alignContent : 'center'}

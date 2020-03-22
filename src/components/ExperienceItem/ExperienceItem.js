@@ -1,21 +1,23 @@
 import React from 'react';
+import { ExperienceItemWrapper} from './ExperienceItem.style'
+import { colors } from '../../constant_styles'
 
 function ExperienceItem(props) {
   return(
-    <>
-      <div className='EI_company'>
-        {this.props.company}
+    <ExperienceItemWrapper>
+      <div style={{fontSize:'1.5em'}}>
+        {props.company}
       </div>
 
-      <div className='EI_position'>
-        {this.props.position}
+      <div>
+        {props.position}
       </div>
 
-      <div className='EI_duration'>
-        {this.props.duration}
+      <div style={{color: colors.teal}}>
+        {props.duration}
       </div>
 
-    </>
+    </ExperienceItemWrapper>
   );
 }
 
