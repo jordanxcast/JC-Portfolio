@@ -1,7 +1,6 @@
 import React from 'react';
 import { colors } from '../../constant_styles'
-import { PageWrapper } from '../../styles'
-import { PageTitle } from '../../components/PageTitle/PageTitle'
+import { PageWrapper, Section, PageTitle  } from '../../styles'
 import ProjectItem from '../../components/ProjectItem/ProjectItem'
 
 function Projects(props) {
@@ -11,7 +10,7 @@ function Projects(props) {
         Projects
       </PageTitle>
 
-      <section>
+      <Section>
         <ProjectItem 
           proj_title='Thoughtful Travels'
           img_src=''
@@ -36,7 +35,7 @@ function Projects(props) {
           stack=''
           desc='Description'
         />
-      </section>
+      </Section>
     </PageWrapper>
   );
 }

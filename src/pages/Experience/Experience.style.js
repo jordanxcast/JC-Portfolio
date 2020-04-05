@@ -7,7 +7,6 @@ export const Skills = styled.section`
   @media (min-width: 700px) {
     flex-direction: column;
   }
-
 `;
 
 export const ExperienceSection = styled.section`

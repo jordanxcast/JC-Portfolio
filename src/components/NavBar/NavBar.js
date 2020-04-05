@@ -1,22 +1,27 @@
-import React from 'react';
-import { colors } from '../../constant_styles'
-
+import React, { useState } from 'react';
+import { NavWrapper, Logo, MobileButton } from './NavBar.style'
+import { DesktopNav, MobileNav } from './Naviagation'
 import Burger from './Burger'
 
 function NavBar(props){
- 
+  const [ menu, setMenu] = useState(false);
   return (
     <>
-      <nav style={{width: '-webkit-fill-available', padding:'20px 20px', backgroundColor: colors.black, color: colors.mint, opacity: '90%', boxShadow: '0px 4px 6px #000000', display: 'flex', flexDirection: 'row', justifyContent: 'space-between', fontSize:'1.2em', position: 'absolute', zIndex: '20'}}>
-        <div>
-          JC
-        </div>
-        
-        
-        <Burger/>
-       
+      <NavWrapper>
 
-      </nav>
+        <Logo to='/'>
+          JC
+        </Logo>
+
+        <DesktopNav className='Desktop-nav'/>
+
+        <MobileButton onClick={() => setMenu(!menu)}>
+          <Burger  open={menu}/>
+        </MobileButton>
+
+        {menu && <MobileNav onClick={() => setMenu(!menu)}/>}
+        
+      </NavWrapper>
     </>
   );
 }

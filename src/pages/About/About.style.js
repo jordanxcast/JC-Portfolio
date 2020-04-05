@@ -14,6 +14,6 @@ export const AboutWrapper = styled.div`
   background-color: ${colors.black};
   padding: 30px;
   opacity: 80%;
-  width: 70%;
-  margin: 30px auto;
+  width: 80%;
+  margin: 10px 20px;
 `;

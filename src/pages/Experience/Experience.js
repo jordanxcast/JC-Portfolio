@@ -1,7 +1,6 @@
 import React from 'react';
-import { PageTitle } from '../../components/PageTitle/PageTitle';
 import ExperienceItem from '../../components/ExperienceItem/ExperienceItem'
-import { PageWrapper } from '../../styles'
+import { PageWrapper, PageTitle } from '../../styles'
 import { Skills, ExperienceSection } from './Experience.style';
 
 function Experience(props) {

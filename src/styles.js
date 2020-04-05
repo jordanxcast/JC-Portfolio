@@ -2,15 +2,36 @@ import styled from 'styled-components'
 import { colors } from './constant_styles'
 
 export const PageWrapper = styled.div`
-  background-color: ${props => props ? props.bgColor : colors.offwhite };
-  margin: 0px;
-  padding: 30px;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  align-content: ${({alignContent}) => alignContent ? alignContent : 'center'}
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  margin: auto;
+  padding: 0px 30px;
+  position: absolute;
+  top: 65;
+  z-index: 1;
+  background-color: ${props => props ? props.bgColor : colors.offwhite };
+  /* align-content: ${({alignContent}) => alignContent ? alignContent : 'center'};    */
+
 `;
 
+export const Section = styled.section`
+  width: 80%;
+  margin: auto;
+`;
+
+export const PageTitle = styled.h1`
+  color: ${colors.grey};
+  font-size: 30px;
+  text-align: ${props => props.align};
+  padding: 10px 10px 10px 0px;
+  margin: 70px auto auto auto;
+  font-weight: normal;
+  width: 80%;
+`;
+
+/* 
 // export const SectionTitle = styled.h3 `
 //   margin-top: 1.5em;
 //   margin-bottom: 0.5em;
@@ -63,4 +84,4 @@ export const PageWrapper = styled.div`
 //   padding: 0.75em 1em;
 //   font-weight: bold;
 //   align-items: center;
-// `;
+// `; */

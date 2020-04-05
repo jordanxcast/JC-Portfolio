@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageTitle } from '../../components/PageTitle/PageTitle'
+import { PageTitle } from '../../styles'
 
 function Lifecycle(props) {
   return(

@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageWrapper } from '../../styles'
 import LinkItem from '../../components/LinkItem/LinkItem'
-import { PageTitle } from '../../components/PageTitle/PageTitle';
+import { PageTitle } from '../../styles'
 import { ContactForm, ContactLabel, ContactInput } from './Contact.style'
 
 function Contact(props) {
