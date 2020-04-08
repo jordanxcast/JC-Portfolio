@@ -24,13 +24,16 @@ export const Section = styled.section`
 `;
 
 export const PageTitle = styled.h1`
-  color: ${colors.grey};
+  color: ${({color}) => color ? color : colors.grey};
   font-size: 30px;
-  text-align: ${(props) => props.align};
+  text-align: ${(props) => (props.align ? props.align : "center")};
   padding: 10px 10px 10px 0px;
   margin: ${({ margin }) => (margin ? margin : "70px auto auto auto")};
   font-weight: normal;
   width: 80%;
+  @media (min-width: 600px) {
+    text-align: ${(props) => (props.align ? props.align : "left")};
+  }
 `;
 
 export const NextPage = styled(Link)`

@@ -3,11 +3,10 @@ import { PageWrapper, NextPage } from "../../styles";
 import { Header } from "./Home.style";
 import { colors } from "../../constant_styles";
 
-
 function Home(props) {
   return (
     <PageWrapper bgColor={colors.black}>
-      <Header margin='100px 20px'>
+      <Header margin="100px 20px">
         <h1>
           Hello, I'm <span className="name">Jordan Castillo</span>
         </h1>

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { colors } from "../../constant_styles";
 import { PageWrapper, PageTitle, NextPage } from "../../styles";
 import { AboutSelf, AboutWrapper, BackgroundImg } from "./About.style";
 import Succulents from "../../images/succulents.icloud";
 
 function About(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <PageWrapper bgColor={colors.purplegrey} alignContent="center">
       <PageTitle align="center" margin="40px auto auto auto">
