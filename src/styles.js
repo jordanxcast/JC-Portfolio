@@ -1,18 +1,20 @@
-import styled from 'styled-components'
-import { colors } from './constant_styles'
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { colors } from "./constant_styles";
 
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   width: -webkit-fill-available;
   margin: auto;
-  padding: 0px 30px;
+  padding: 30px 30px;
   position: absolute;
   top: 65;
   z-index: 1;
-  background-color: ${props => props ? props.bgColor : colors.offwhite };
-  /* align-content: ${({alignContent}) => alignContent ? alignContent : 'center'};    */
+  background-color: ${(props) => (props ? props.bgColor : colors.offwhite)};
+  /* align-content: ${({ alignContent }) =>
+    alignContent ? alignContent : "center"};    */
 
 `;
 
@@ -24,11 +26,28 @@ export const Section = styled.section`
 export const PageTitle = styled.h1`
   color: ${colors.grey};
   font-size: 30px;
-  text-align: ${props => props.align};
+  text-align: ${(props) => props.align};
   padding: 10px 10px 10px 0px;
-  margin: 70px auto auto auto;
+  margin: ${({ margin }) => (margin ? margin : "70px auto auto auto")};
   font-weight: normal;
   width: 80%;
+`;
+
+export const NextPage = styled(Link)`
+  position: relative;
+  border: 1px solid ${colors.outerspace};
+  padding: 15px 30px;
+  margin: ${({ margin }) => (margin ? margin : "30px auto 10px auto")};
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  color: ${colors.outerspace};
+  /* top: ${({ top }) => top && top}; */
+ 
+  :hover {
+    color: ${colors.white};
+    border: 2px solid ${colors.white};
+  }
 `;
 
 /* 
