@@ -19,20 +19,20 @@ export const PageWrapper = styled.div`
 `;
 
 export const Section = styled.section`
-  width: 80%;
-  margin: auto;
+  width: ${({ width }) => (width ? width : "80%")};
+  margin: ${({ margin }) => (margin ? margin : "auto")};
 `;
 
 export const PageTitle = styled.h1`
-  color: ${({color}) => color ? color : colors.grey};
-  font-size: 30px;
+  color: ${({ color }) => (color ? color : colors.grey)};
+  /* font-size: 30px; */
   text-align: ${(props) => (props.align ? props.align : "center")};
   padding: 10px 10px 10px 0px;
-  margin: ${({ margin }) => (margin ? margin : "70px auto auto auto")};
+  margin: ${({ margin }) => (margin ? margin : "auto")};
   font-weight: normal;
   width: 80%;
   @media (min-width: 600px) {
-    text-align: ${(props) => (props.align ? props.align : "left")};
+    text-align: ${(props) => (props.align ? props.align : "center")};
   }
 `;
 
@@ -48,8 +48,9 @@ export const NextPage = styled(Link)`
   /* top: ${({ top }) => top && top}; */
  
   :hover {
-    color: ${colors.white};
-    border: 2px solid ${colors.white};
+    color: ${({ hovercolor }) => (hovercolor ? hovercolor : colors.white)};
+    border: 2px solid ${({ hovercolor }) =>
+      hovercolor ? hovercolor : colors.white};
   }
 `;
 

@@ -15,8 +15,8 @@ function Home(props) {
           Full stack developer with an ever-growing love for learning new things
         </h2>
       </Header>
-      <NextPage to="/about" margin="35% auto 10px auto" top="90%">
-        about me
+      <NextPage to="/projects" margin="35% auto 10px auto" top="90%">
+        recent projects
       </NextPage>
     </PageWrapper>
   );

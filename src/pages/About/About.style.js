@@ -7,6 +7,7 @@ export const AboutSelf = styled.img`
   width: 150px;
   height: 150px;
   margin: 10px auto 10px auto;
+  object-fit: cover;
 `;
 
 export const AboutWrapper = styled.div`
@@ -36,4 +37,5 @@ export const BackgroundImg = styled.img`
   background-color: ${colors.mint};
   height: 60%;
   width: 80%;
+  opacity: 50%;
 `;

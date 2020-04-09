@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { colors } from "../../constant_styles";
 import { PageWrapper, PageTitle, NextPage } from "../../styles";
 import { AboutSelf, AboutWrapper, BackgroundImg } from "./About.style";
-import Succulents from "../../images/succulents.icloud";
+import Succulent from "../../images/Succulent.png";
+import Self from "../../images/Self.png";
 
 function About(props) {
   useEffect(() => {
@@ -10,13 +11,17 @@ function About(props) {
   });
   return (
     <PageWrapper bgColor={colors.purplegrey} alignContent="center">
-      <PageTitle align="center" margin="40px auto auto auto">
+      <PageTitle
+        align="center"
+        margin="40px auto auto auto"
+        color={colors.white}
+      >
         About Me
       </PageTitle>
 
-      <AboutSelf src="" alt="image of self" />
+      <AboutSelf src={Self} alt="image of self" />
 
-      <BackgroundImg src={Succulents} alt="image of self" />
+      <BackgroundImg src={Succulent} alt="image of self" />
       {/* <h2 style={{textAlign:'center'}}>Jordan Castillo</h2> */}
 
       <AboutWrapper>
