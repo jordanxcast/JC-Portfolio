@@ -11,6 +11,7 @@ import { colors } from "../../constant_styles";
 function Experience(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
   });
   const skills = [
     "Html5",
@@ -33,7 +34,7 @@ function Experience(props) {
 
   return (
     <PageWrapper bgColor={colors.slategrey}>
-      <PageTitle color={colors.offwhite} margin="auto auto 20px auto">
+      <PageTitle color={colors.lightgrey} margin="auto auto 20px auto">
         Experience
       </PageTitle>
 
@@ -46,7 +47,7 @@ function Experience(props) {
       </ExperienceSection>
 
       <Skills>
-        <h2 style={{ margin: "10px", color: colors.teal }}>Skills</h2>
+        <h2 style={{ margin: "10px", color: colors.darkpurple }}>Skills</h2>
         <div className="skills-container">
           {skills.map((skll) => {
             return <Skill>{skll}</Skill>;

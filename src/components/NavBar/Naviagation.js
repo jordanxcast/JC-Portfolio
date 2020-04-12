@@ -1,28 +1,27 @@
-import React from 'react';
-import {Link} from 'react-router-dom'
-import styled from 'styled-components'
-import { colors } from '../../constant_styles'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { colors } from "../../constant_styles";
 
 const NavLinks = styled.div`
   display: flex;
-  flex-direction: ${props => props.direction ? props.direction : 'column'};
+  flex-direction: ${(props) => (props.direction ? props.direction : "column")};
   background: transparent;
-  color: ${props => props.color ? props.color : colors.white};
+  color: ${(props) => (props.color ? props.color : colors.white)};
   align-items: center;
   margin-right: 0px;
 `;
 
 const MenuLink = styled(Link)`
-  color: ${props => props.color ? props.color : colors.offwhite};
+  color: ${(props) => (props.color ? props.color : colors.offwhite)};
   background: transparent;
   text-decoration: none;
   margin-right: 0px;
   font-size: 16px;
-  margin-left: ${props => props ? props.marginLeft : '0px'};
-  :hover{
+  margin-left: ${(props) => (props ? props.marginLeft : "0px")};
+  :hover {
     cursor: pointer;
-    color: ${colors.purplegrey}
+    color: ${colors.vermilion};
   }
 `;
 
@@ -33,33 +32,31 @@ const Navigation = (props) => {
         Home
       </MenuLink> */}
 
-      <MenuLink className='nav-links' to='/about'>
+      <MenuLink className="nav-links" to="/about">
         About
       </MenuLink>
 
-      <MenuLink className='nav-links' to='/projects'>
+      <MenuLink className="nav-links" to="/projects">
         Projects
       </MenuLink>
 
-      <MenuLink className='nav-links' to='/experience'>
+      <MenuLink className="nav-links" to="/experience">
         Experience
       </MenuLink>
 
-      <MenuLink className='nav-links' to='/contact'>
+      <MenuLink className="nav-links" to="/contact">
         Contact
       </MenuLink>
-      
-      <MenuLink className='nav-links'>
-        Lifecycle
-      </MenuLink>
+
+      <MenuLink className="nav-links">Lifecycle</MenuLink>
     </NavLinks>
-  )
-}
+  );
+};
 
 const DesktopNavigation = styled.nav`
   display: none;
-    
-  @media screen and (min-width: 700px) {  
+
+  @media screen and (min-width: 700px) {
     display: flex;
     flex-direction: row;
     justify-self: flex-end;
@@ -67,25 +64,23 @@ const DesktopNavigation = styled.nav`
     padding: 0;
     color: ${colors.white};
 
-    .nav-links{
-    margin-left: 20px;
+    .nav-links {
+      margin-left: 20px;
     }
     .div {
-    display:flex;
-    flex-direction: row;
+      display: flex;
+      flex-direction: row;
     }
-  } 
+  }
 `;
 
 export const DesktopNav = (props) => {
   return (
     <DesktopNavigation>
-      
-      <Navigation direction='row' marginLeft='25px'/>
-
+      <Navigation direction="row" marginLeft="25px" />
     </DesktopNavigation>
-  )
-}
+  );
+};
 
 const MobileNavigation = styled.nav`
   width: 100px;
@@ -98,9 +93,9 @@ const MobileNavigation = styled.nav`
   top: 64.5px;
   right: 0;
 
-  .nav-links{
+  .nav-links {
     margin: 5px 20px 5px 20px;
-    }
+  }
 
   @media screen and (min-width: 700px) {
     display: none;
@@ -108,11 +103,9 @@ const MobileNavigation = styled.nav`
 `;
 
 export const MobileNav = (props) => {
-  return(
+  return (
     <MobileNavigation>
-
-      <Navigation direction='column' color={colors.darkgrey}/>
-
+      <Navigation direction="column" color={colors.darkgrey} />
     </MobileNavigation>
   );
-}
+};

@@ -1,7 +1,7 @@
 import React from "react";
-import { PageWrapper } from "../../styles";
+import { PageWrapper, PageTitle } from "../../styles";
+import { colors } from "../../constant_styles";
 import LinkItem from "../../components/LinkItem/LinkItem";
-import { PageTitle } from "../../styles";
 import {
   ContactForm,
   ContactLabel,
@@ -12,8 +12,14 @@ import {
 
 function Contact(props) {
   return (
-    <PageWrapper align="right">
-      <PageTitle margin="0px auto">Get In Touch</PageTitle>
+    <PageWrapper
+      align="right"
+      bgColor={colors.black}
+      padding="30px 30px 5px 30px"
+    >
+      <PageTitle margin="0px auto 30px auto" color={colors.vermilion}>
+        Get In Touch
+      </PageTitle>
 
       <ContactForm>
         <ContactLabel htmlFor="contact_name">Your Name</ContactLabel>
@@ -34,7 +40,7 @@ function Contact(props) {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-between",
-          margin: "20px 50px",
+          margin: "100px 10px 10px 10px",
         }}
       >
         <LinkItem />

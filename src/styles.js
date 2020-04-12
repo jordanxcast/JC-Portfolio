@@ -8,7 +8,7 @@ export const PageWrapper = styled.div`
   min-height: -webkit-fill-available;
   width: -webkit-fill-available;
   margin: auto;
-  padding: 30px 30px;
+  padding: ${({ padding }) => (padding ? padding : "30px 30px")};
   position: absolute;
   top: 65;
   z-index: 1;

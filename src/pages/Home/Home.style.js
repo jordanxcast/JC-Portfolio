@@ -28,4 +28,5 @@ export const Header = styled.div`
     margin: 0px;
     font-weight: 400;
   }
+
 `;
