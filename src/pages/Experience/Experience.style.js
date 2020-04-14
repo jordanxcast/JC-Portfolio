@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
 
@@ -20,10 +20,52 @@ export const Skills = styled.section`
 
 export const Skill = styled.div`
   padding: 5px;
-  margin: 10px;
+  margin: ${({ margin }) => (margin ? margin : "10px")};
   width: fit-content;
   border: 1px solid ${colors.paleblue};
-  color: ${colors.offwhite};
+  color: ${({ color }) => (color ? color : colors.offwhite)};
+  font-size: ${({ fontsize }) => (fontsize ? fontsize : "auto")};
+
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes fadein {
+    /* Firefox */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes fadein {
+    /* Opera */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export const ExperienceSection = styled.section`
@@ -75,6 +117,7 @@ const Expand = styled.button`
 `;
 
 export const ExperienceItem = (props) => {
+  const [expand, setExpand] = useState(false);
   return (
     <ExperienceItemWrapper>
       <div className="details">
@@ -84,7 +127,9 @@ export const ExperienceItem = (props) => {
 
         <div style={{ color: colors.teal }}>{props.duration}</div>
       </div>
-      <Expand type="button"> Expand</Expand>
+      <Expand type="button" onClick={() => setExpand(!expand)}> 
+      Expand
+      </Expand>
     </ExperienceItemWrapper>
   );
 };

@@ -12,7 +12,7 @@ function Home(props) {
   let i = 0;
   const content =
     "Full stack developer with an ever-growing love for learning new things";
-  const speed = 80;
+  const speed = 50;
   function typewriter() {
     if (i < content.length) {
       document.getElementById("desc").innerHTML += content.charAt(i);

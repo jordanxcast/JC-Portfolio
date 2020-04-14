@@ -38,4 +38,44 @@ export const BackgroundImg = styled.img`
   height: 60%;
   width: 80%;
   opacity: 50%;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 50%;
+    }
+  }
+  @-moz-keyframes fadein {
+    /* Firefox */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 50%;
+    }
+  }
+  @-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 50%;
+    }
+  }
+  @-o-keyframes fadein {
+    /* Opera */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 50%;
+    }
+  }
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ProjectTitle,
   ProjectImage,
@@ -7,8 +7,12 @@ import {
   ProjectLink,
   ProjectItemWrapper,
 } from "./ProjectItem.style";
+import { Skill } from "../../pages/Experience/Experience.style";
+import { colors } from "../../constant_styles";
 
 function ProjectItem(props) {
+  const [skills, setSkills] = useState(false);
+
   return (
     <ProjectItemWrapper>
       <ProjectTitle>{props.proj_title}</ProjectTitle>
@@ -18,6 +22,7 @@ function ProjectItem(props) {
           flexDirection: "column",
           alignItems: "center",
         }}
+        className="tech-wrapper"
       >
         <ProjectImage src={props.img_src} alt={props.img_alt} />
 
@@ -30,13 +35,42 @@ function ProjectItem(props) {
           }}
         >
           <ProjectTech>
-            <ProjectLink href={props.repo_href}>Repo</ProjectLink>
-            <ProjectLink href={props.live_href}>Live</ProjectLink>
-            <p style={{ marginTop: "0px" }}> Tech </p>
-            <div>{props.stack}</div>
+            <ProjectLink href={props.repo_href} target="_blank">
+              Repo
+            </ProjectLink>
+            <ProjectLink href={props.live_href} target="_blank">
+              Live
+            </ProjectLink>
+            <div style={{ marginTop: "0px", display: "flex" }} className="tech">
+              <button
+                className={skills ? "tech-btn closed" : "tech-btn "}
+                onClick={() => setSkills(!skills)}
+              >
+                {" "}
+                >
+              </button>{" "}
+              <p>Tech</p>
+            </div>
+            <div className="skills">
+              {skills &&
+                props.stack.map((item) => (
+                  <Skill
+                    color={colors.black}
+                    margin="5px 0px 5px 10px"
+                    fontsize="12px"
+                  >
+                    {item}
+                  </Skill>
+                ))}
+            </div>
           </ProjectTech>
 
-          <ProjectDesc>{props.desc}</ProjectDesc>
+          <ProjectDesc>
+            <div className="description">
+              {props.desc}
+              <span> {props.subject}</span>
+            </div>
+          </ProjectDesc>
         </div>
       </div>
     </ProjectItemWrapper>

@@ -21,13 +21,54 @@ export const PageWrapper = styled.div`
 export const Section = styled.section`
   width: ${({ width }) => (width ? width : "80%")};
   margin: ${({ margin }) => (margin ? margin : "auto")};
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .project-section {
+    /* for chrome and safari*/
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: slidein;
+
+    /*for firefox*/
+    -moz-animation-duration: 2s;
+    -moz-animation-name: slidein;
+
+    /* for opera*/
+    -o-animation-duration: 2s;
+    -o-animation-name: slidein;
+
+    /* Standard syntax*/
+    animation-duration: 2s;
+    animation-name: slidein;
+
+    @-webkit-keyframes slidein {
+      from {
+        width: 0px;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes slidein {
+      from {
+        width: 0px;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export const PageTitle = styled.h1`
   color: ${({ color }) => (color ? color : colors.grey)};
   /* font-size: 30px; */
   text-align: ${(props) => (props.align ? props.align : "center")};
-  padding: 10px 10px 10px 0px;
+  padding: ${({ padding }) => (padding ? padding : "10px 10px 10px 0px")};
   margin: ${({ margin }) => (margin ? margin : "auto")};
   font-weight: normal;
   width: 80%;
