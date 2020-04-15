@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
 
 export const Skills = styled.section`
   display: flex;
+  flex-direction: column;
   margin: auto;
   width: 80%;
   color: ${colors.teal};
@@ -11,11 +13,12 @@ export const Skills = styled.section`
   .skills-container {
     width: 100%;
     display: flex;
+
     flex-wrap: wrap;
   }
-  @media (min-width: 700px) {
+  /* @media (min-width: 700px) {
     flex-direction: column;
-  }
+  } */
 `;
 
 export const Skill = styled.div`
@@ -81,7 +84,7 @@ export const ExperienceItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin: 20px auto;
+  margin: 40px auto 0px auto;
   color: ${colors.mint};
   justify-content: space-between;
 
@@ -116,20 +119,85 @@ const Expand = styled.button`
   }
 `;
 
+const ExpandedSection = styled.ul`
+  border-bottom: 1px dashed ${colors.teal};
+  border-left: 1px dashed ${colors.teal};
+  border-right: 1px dashed ${colors.teal};
+  border-top: none;
+  margin-top: 0px;
+  padding: 20px;
+  color: ${colors.offwhite};
+  font-size: 14px;
+
+  > li {
+    list-style: none;
+    margin: 10px 0px;
+  }
+`;
+
+const ExpItem = styled.div`
+  .expanding-appear {
+    opacity: 0;
+    padding: 0px 20px;
+    font-size: 0px;
+    color: ${colors.teal};
+  }
+  .expanding-appear-active {
+    opacity: 1;
+    padding: 20px;
+    font-size: 14px;
+    transition: all 600ms linear;
+  }
+  .expanding-appear-done {
+    color: ${colors.offwhite};
+  }
+  .expanding-exit {
+    opacity: 1;
+    padding: 20px;
+    font-size: 14px;
+    transition: all 600ms linear;
+  }
+  .expanding-exit-active {
+    opacity: 0;
+    padding: 0px 20px;
+    font-size: 0px;
+    color: ${colors.teal};
+    /* transition: all 600ms linear; */
+  }
+`;
+
 export const ExperienceItem = (props) => {
   const [expand, setExpand] = useState(false);
   return (
-    <ExperienceItemWrapper>
-      <div className="details">
-        <div style={{ fontSize: "1.5em" }}>{props.company}</div>
+    <ExpItem>
+      <ExperienceItemWrapper>
+        <div className="details">
+          <div style={{ fontSize: "1.5em" }}>{props.company}</div>
 
-        <div>{props.position}</div>
+          <div>{props.position}</div>
 
-        <div style={{ color: colors.teal }}>{props.duration}</div>
-      </div>
-      <Expand type="button" onClick={() => setExpand(!expand)}> 
-      Expand
-      </Expand>
-    </ExperienceItemWrapper>
+          <div style={{ color: colors.teal }}>{props.duration}</div>
+        </div>
+        <Expand type="button" onClick={() => setExpand(!expand)}>
+          {expand ? "Less" : "More"}
+        </Expand>
+      </ExperienceItemWrapper>
+      {expand && (
+        <CSSTransition
+          in={expand}
+          appear={expand}
+          exit={!expand}
+          timeout={600}
+          classNames="expanding"
+          unmountOnExit
+        >
+          <ExpandedSection>
+            {props.expanded.map((item, idx) => {
+              return <li key={idx}>{item}</li>;
+            })}
+          </ExpandedSection>
+        </CSSTransition>
+      )}
+    </ExpItem>
   );
 };

@@ -27,10 +27,10 @@ const MenuLink = styled(Link)`
     color: ${colors.vermilion};
   }
 
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
 
   @keyframes fadein {
     from {
@@ -130,13 +130,12 @@ export const DesktopNav = (props) => {
 };
 
 const MobileNavigation = styled.nav`
-  /* margin: 0px; */
   background: ${colors.purplegrey};
   padding: 10px 30px;
   width: 150px;
   color: ${colors.darkgrey};
-  align-self: flex-end;
-  position: absolute;
+  /* align-self: flex-end; */
+  position: fixed;
   top: 70px;
   right: 0;
   z-index: 11;
@@ -168,53 +167,43 @@ const MobileNavigation = styled.nav`
   /* Standard syntax*/
   animation-duration: 1s;
   animation-name: slidein;
+  /* animation: slidein 1s ease-in; */
 
   @-webkit-keyframes slidein {
-    from {
-      width: 0px;
+    0% {
+      padding: 0px;
+      width: 0;
       right: -150px;
     }
 
-    to {
+    50% {
+      padding: 5px 15px;
+      width: 90px;
+      right: -90px;
+      opacity: 0;
+    }
+
+    100% {
       padding: 10px 30px;
       width: 150px;
       right: 0;
+      opacity: 1;
     }
   }
 
-  /* @-moz-keyframes slidein {
-    from {
-      width: 0px;
-    }
-
-    to {
-      padding: 10px 30px;
-
-      width: 150px;
-    }
-  } */
-  /* @-o-keyframes slidein {
-    from {
-
-
-      width: 0%;
-    }
-
-    to {
-
-      padding: 10px 30px;
-
-      width: 150px;
-    }
-  } */
   @keyframes slidein {
-    from {
-      width: 0px;
+    0% {
+      padding: 0px;
+      width: 0;
+      right: -150px;
+      opacity: 0;
     }
 
-    to {
+    100% {
       padding: 10px 30px;
       width: 150px;
+      right: 0;
+      opacity: 1;
     }
   }
 `;

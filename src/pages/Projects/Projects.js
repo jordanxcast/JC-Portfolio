@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Footer } from "../../components/Footer/Footer";
 import { colors } from "../../constant_styles";
 import { PageWrapper, Section, PageTitle, NextPage } from "../../styles";
 import ProjectItem from "../../components/ProjectItem/ProjectItem";
@@ -61,6 +62,7 @@ function Projects(props) {
       >
         experience
       </NextPage>
+      <Footer bgcolor={colors.offwhite} bottom="-30px" left="0px" />
     </PageWrapper>
   );
 }

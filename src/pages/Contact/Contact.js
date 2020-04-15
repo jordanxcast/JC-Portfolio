@@ -1,8 +1,10 @@
 import React from "react";
 import { PageWrapper, PageTitle } from "../../styles";
 import { colors } from "../../constant_styles";
-import LinkItem from "../../components/LinkItem/LinkItem";
+import Links from "../../components/LinkItem/LinkItem";
+import { Footer } from "../../components/Footer/Footer";
 import {
+  ContactDescription,
   ContactForm,
   ContactLabel,
   ContactInput,
@@ -20,22 +22,46 @@ function Contact(props) {
       <PageTitle margin="0px auto 30px auto" color={colors.vermilion}>
         Get In Touch
       </PageTitle>
+      <ContactDescription margin="10px auto">
+        Please reach out if you would like to collaborate on a project, learn
+        more about my work, or just get to know eachother. <br />
+        <span>I am also currently open to new opportunities.</span>
+      </ContactDescription>
 
       <ContactForm>
         <ContactLabel htmlFor="contact_name">Your Name</ContactLabel>
-        <ContactInput id="contact_name" type="text"></ContactInput>
+        <ContactInput
+          id="contact_name"
+          type="text"
+          placeholder="Carl Sagan"
+        ></ContactInput>
 
         <ContactLabel htmlFor="contact_email">Email</ContactLabel>
-        <ContactInput id="contact_email" type="text"></ContactInput>
+        <ContactInput
+          id="contact_email"
+          type="text"
+          placeholder="palebluedot@gmail.com"
+        ></ContactInput>
+
+        <ContactLabel htmlFor="subject">Subject</ContactLabel>
+        <ContactInput
+          id="subject"
+          type="text"
+          placeholder="Cosmos"
+        ></ContactInput>
 
         <ContactLabel htmlFor="contact_message">Message</ContactLabel>
-        <ContactTextarea id="contact_message" type="textarea"></ContactTextarea>
+        <ContactTextarea
+          id="contact_message"
+          type="textarea"
+          placeholder='"We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology."'
+        ></ContactTextarea>
 
         <FormButton>Send</FormButton>
       </ContactForm>
 
       {/* <h2 style={{ margin: "30px auto" }}>Links</h2> */}
-      <div
+      {/* <div
         style={{
           display: "flex",
           flexWrap: "wrap",
@@ -43,12 +69,12 @@ function Contact(props) {
           margin: "100px 10px 10px 10px",
         }}
       >
-        <LinkItem />
-        <LinkItem />
-        <LinkItem />
-        <LinkItem />
-        <LinkItem />
-      </div>
+      </div> */}
+      <ContactDescription>
+        Here are some other places you can find me.
+      </ContactDescription>
+      <Links />
+      <Footer left="-30px" bottom="-5px" maxwidth="auto" />
     </PageWrapper>
   );
 }

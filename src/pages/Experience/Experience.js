@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { Footer } from "../../components/Footer/Footer";
 import { PageWrapper, PageTitle, NextPage } from "../../styles";
 import {
   Skills,
@@ -7,14 +8,18 @@ import {
   ExperienceItem,
 } from "./Experience.style";
 import { colors } from "../../constant_styles";
+import { PortfolioContext } from "../../PortfolioContext";
 
 function Experience(props) {
+  const { experienceItems } = useContext(PortfolioContext);
+  console.log(experienceItems, "!!!");
   useEffect(() => {
     window.scrollTo(0, 0);
   });
   const skills = [
     "Html5",
     "CSS",
+    "Styled Components",
     "JavaScript",
     "ES6",
     "Babel",
@@ -32,43 +37,39 @@ function Experience(props) {
   ];
 
   return (
-    <PageWrapper bgColor={colors.slategrey}>
+    <PageWrapper bgColor={colors.slategrey} padding="30px 0px">
       <PageTitle color={colors.lightgrey} margin="auto auto 20px auto">
         Experience
       </PageTitle>
 
       <ExperienceSection className="Experience_skills">
-        <ExperienceItem
-          company="Thinkful"
-          position="Full Stack Apprenticeship"
-          duration="Oct. 2019 - April 2020"
-        />
-
-        <ExperienceItem
-          company="Trustwork"
-          position="Project & Product Manager"
-          duration="June 2018 - July 2019"
-        />
-
-        <ExperienceItem
-          company="Lot 5 Studios"
-          position="Photographer"
-          duration="Aug. 2014 - July 2017"
-        />
+        {experienceItems.map((exp) => (
+          <ExperienceItem
+            key={exp.id}
+            company={exp.company}
+            position={exp.position}
+            duration={exp.duration}
+            expanded={exp.expanded}
+          />
+        ))}
       </ExperienceSection>
 
       <Skills>
-        <h2 style={{ margin: "10px", color: colors.vermilion }}>Skills</h2>
+        <h2 style={{ margin: "50px 10px 10px 10px", color: colors.vermilion }}>
+          Skills
+        </h2>
         <div className="skills-container">
-          {skills.map((skll) => {
-            return <Skill>{skll}</Skill>;
+          {skills.map((skll, idx) => {
+            return <Skill key={idx}>{skll}</Skill>;
           })}
         </div>
       </Skills>
 
-      <NextPage to="/about" margin="35% auto 10px auto" top="90%">
+      <NextPage to="/about" margin="35% auto 10px auto" top="20%">
         about me
       </NextPage>
+
+      <Footer bottom="-30px" icons="show" left="0px" />
     </PageWrapper>
   );
 }

@@ -1,6 +1,36 @@
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
 
+export const AboutPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .About-wrap {
+    flex-direction: column;
+    margin: auto;
+    > h1 {
+      width: 100%;
+    }
+
+    @media (min-width: 900px) {
+      width: 20%;
+      position: fixed;
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      margin: auto 10px;
+
+      > h1 {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  }
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
+`;
+
 export const AboutSelf = styled.img`
   border: 1px solid ${colors.black};
   border-radius: 50%;
@@ -8,6 +38,13 @@ export const AboutSelf = styled.img`
   height: 150px;
   margin: 10px auto 10px auto;
   object-fit: cover;
+
+  @media (min-width: 900px) {
+    position: relative;
+    margin-top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 export const AboutWrapper = styled.div`
@@ -26,23 +63,30 @@ export const AboutWrapper = styled.div`
     margin: 10px auto;
     opacity: 100%;
   }
+  @media (min-width: 900px) {
+    width: 50%;
+    position: relative;
+    margin-right: 100px;
+  }
 `;
 
 export const BackgroundImg = styled.img`
   position: fixed;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -11;
   background-color: ${colors.mint};
-  height: 60%;
-  width: 80%;
+  height: 70%;
+  width: 100%;
   opacity: 50%;
   animation: fadein 3s;
   -moz-animation: fadein 3s; /* Firefox */
   -webkit-animation: fadein 3s; /* Safari and Chrome */
   -o-animation: fadein 3s; /* Opera */
-
+  @media (min-width: 900px) {
+    width: 90%;
+  }
   @keyframes fadein {
     from {
       opacity: 0;

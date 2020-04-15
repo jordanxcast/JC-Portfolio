@@ -1,17 +1,17 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 
-const PortfolioContext = React.createContext()
+export const PortfolioContext = React.createContext();
 
 const PortfolioContextProvider = (props) => {
-  const [thoughtfulTravelsImgs, setTTImages] = useState([
+  // const [thoughtfulTravelsImgs, setTTImages] = useState([
 
-  ])
-  const [repetitionImgs, setRepetitionImages] = useState([
+  // ])
+  // const [repetitionImgs, setRepetitionImages] = useState([
 
-  ])
-  const [folkulImgs, setFolkulImages] = useState([
+  // ])
+  // const [folkulImgs, setFolkulImages] = useState([
 
-  ])
+  // ])
 
   const [experienceItems] = useState([
     {
@@ -37,11 +37,11 @@ const PortfolioContextProvider = (props) => {
     },
   ]);
 
-  return(
-    <PortfolioContext.Provider value={{thoughtfulTravelsImgs, repetitionImgs, folkulImgs, experienceItems}}>
+  return (
+    <PortfolioContext.Provider value={{ experienceItems }}>
       {props.children}
     </PortfolioContext.Provider>
-  )
-}
+  );
+};
 
-export default PortfolioContextProvider
+export default PortfolioContextProvider;

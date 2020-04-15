@@ -1,30 +1,80 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Link = styled.div`
-  border: 1px solid ${colors.vermilion};
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  padding: 10px;
-  text-align: center;
-  margin: 10px 5px;
-  color: ${colors.mint};
+const LinksContainer = styled.div`
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  margin: ${({ margin }) => (margin ? margin : "50px auto")};
+  height: ${({ height }) => (height ? height : "50px")};
+  align-items: center;
 
-  > i {
-    margin: auto;
-    text-align: center;
-    font-size: 12px;
+  .link {
+    width: 50px;
+    border: 1px solid ${colors.vermilion};
+    border-radius: 5px;
+    padding: ${({ linkpadding }) => (linkpadding ? linkpadding : "10px")};
+    color: ${colors.offwhite};
+  }
+
+  .logo {
+    font-size: 2rem;
+    height: 100%;
+    width: 90%;
+  }
+
+  .link {
+    :hover {
+      animation-name: link;
+      animation-duration: 0.5s;
+      color: ${colors.vermilion};
+      border: 1px solid ${colors.offwhite};
+
+      @keyframes link {
+        from {
+          color: ${colors.offwhite};
+          border: 1px solid ${colors.vermilion};
+        }
+        to {
+          color: ${colors.vermilion};
+          border: 1px solid ${colors.offwhite};
+        }
+      }
+    }
   }
 `;
 
-function LinkItem(props) {
+function Links(props) {
   return (
-    <Link>
-      <i className="LinkItem_icon">{props.icon} Icon</i>
-    </Link>
+    <LinksContainer>
+      <Link href="/about" className="link">
+        <FontAwesomeIcon className="logo" icon={["fab", "linkedin"]} />
+      </Link>
+
+      <Link href="/about" className="link">
+        <FontAwesomeIcon className="logo" icon={["fab", "github"]} />
+      </Link>
+
+      <Link href="/about" className="link">
+        <FontAwesomeIcon className="logo" icon={["fab", "stack-overflow"]} />
+      </Link>
+
+      <Link href="/about" className="link">
+        <FontAwesomeIcon className="logo" icon={["fab", "instagram"]} />
+      </Link>
+
+      <Link href="/about" className="link">
+        <FontAwesomeIcon className="logo" icon={["fab", "angellist"]} />
+      </Link>
+
+      <a href="/about" className="link">
+        <FontAwesomeIcon className="logo" icon={["fab", "trello"]} />
+      </a>
+    </LinksContainer>
   );
 }
 
-export default LinkItem;
+export default Links;

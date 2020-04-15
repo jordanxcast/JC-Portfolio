@@ -86,7 +86,6 @@ export const NextPage = styled(Link)`
   width: fit-content;
   text-decoration: none;
   color: ${colors.outerspace};
-  /* top: ${({ top }) => top && top}; */
  
   :hover {
     color: ${({ hovercolor }) => (hovercolor ? hovercolor : colors.white)};
