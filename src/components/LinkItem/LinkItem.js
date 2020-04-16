@@ -49,7 +49,7 @@ const LinksContainer = styled.div`
 
 function Links(props) {
   return (
-    <LinksContainer>
+    <LinksContainer margin={props.margin}>
       <Link href="/about" className="link">
         <FontAwesomeIcon className="logo" icon={["fab", "linkedin"]} />
       </Link>

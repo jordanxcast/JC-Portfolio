@@ -13,12 +13,8 @@ export const Skills = styled.section`
   .skills-container {
     width: 100%;
     display: flex;
-
     flex-wrap: wrap;
   }
-  /* @media (min-width: 700px) {
-    flex-direction: column;
-  } */
 `;
 
 export const Skill = styled.div`
@@ -28,8 +24,10 @@ export const Skill = styled.div`
   border: 1px solid ${colors.paleblue};
   color: ${({ color }) => (color ? color : colors.offwhite)};
   font-size: ${({ fontsize }) => (fontsize ? fontsize : "auto")};
+  opacity: 1;
 
-  animation: fadein 2s;
+  animation-name: fadein;
+  animation-duration: 2s;
   -moz-animation: fadein 2s; /* Firefox */
   -webkit-animation: fadein 2s; /* Safari and Chrome */
   -o-animation: fadein 2s; /* Opera */

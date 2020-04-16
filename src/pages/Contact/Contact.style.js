@@ -31,12 +31,12 @@ export const ContactForm = styled.form`
 
 export const ContactDescription = styled.div`
   text-align: center;
-  margin: ${({ margin }) => (margin ? margin : "40px auto 0px auto")};
+  margin: ${({ margin }) => (margin ? margin : "100px auto 0px auto")};
   width: 80%;
   color: ${colors.offwhite};
   font-size: 18px;
   > span {
-    margin-top: 10px;
+    line-height: 4rem;
     color: ${colors.mint};
   }
 

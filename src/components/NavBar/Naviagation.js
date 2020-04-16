@@ -68,8 +68,47 @@ const MenuLink = styled(Link)`
     }
   }
 `;
+const MobileNavigationLinks = (props) => {
+  const { cb } = props;
+
+  return (
+    <NavLinks direction={props.direction}>
+      {/* <MenuLink className='nav-links' to='/'>
+        Home
+      </MenuLink> */}
+
+      <MenuLink className="nav-links active" to="/about" onClick={() => cb()}>
+        About
+      </MenuLink>
+
+      <MenuLink
+        className="nav-links active"
+        to="/projects"
+        onClick={() => cb()}
+      >
+        Projects
+      </MenuLink>
+
+      <MenuLink
+        className="nav-links active"
+        to="/experience"
+        onClick={() => cb()}
+      >
+        Experience
+      </MenuLink>
+
+      <MenuLink className="nav-links active" to="/contact" onClick={() => cb()}>
+        Contact
+      </MenuLink>
+
+      {/* <MenuLink className="nav-links">Lifecycle</MenuLink> */}
+    </NavLinks>
+  );
+};
 
 const Navigation = (props) => {
+  // const { cb } = props;
+
   return (
     <NavLinks direction={props.direction}>
       {/* <MenuLink className='nav-links' to='/'>
@@ -133,6 +172,7 @@ const MobileNavigation = styled.nav`
   background: ${colors.purplegrey};
   padding: 10px 30px;
   width: 150px;
+  max-width: 150px;
   color: ${colors.darkgrey};
   /* align-self: flex-end; */
   position: fixed;
@@ -209,9 +249,14 @@ const MobileNavigation = styled.nav`
 `;
 
 export const MobileNav = (props) => {
+  const { cb } = props;
   return (
     <MobileNavigation>
-      <Navigation direction="column" color={colors.offwhite} />
+      <MobileNavigationLinks
+        direction="column"
+        color={colors.offwhite}
+        cb={cb}
+      />
     </MobileNavigation>
   );
 };

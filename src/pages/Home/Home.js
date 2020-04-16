@@ -32,7 +32,12 @@ function Home(props) {
           {""}
         </h2>
       </Header>
-      <NextPage to="/projects" margin="35% auto 10px auto" top="90%">
+      <NextPage
+        to="/projects"
+        margin="35% auto 10px auto"
+        top="90%"
+        color={colors.mint}
+      >
         recent projects
       </NextPage>
     </PageWrapper>

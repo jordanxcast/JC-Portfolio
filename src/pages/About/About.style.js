@@ -80,10 +80,10 @@ export const BackgroundImg = styled.img`
   height: 70%;
   width: 100%;
   opacity: 50%;
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari and Chrome */
-  -o-animation: fadein 3s; /* Opera */
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
   @media (min-width: 900px) {
     width: 90%;
   }

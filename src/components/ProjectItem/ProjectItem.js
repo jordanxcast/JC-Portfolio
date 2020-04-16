@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   ProjectTitle,
   ProjectImage,
@@ -15,7 +16,7 @@ function ProjectItem(props) {
 
   return (
     <ProjectItemWrapper>
-      <ProjectTitle>{props.proj_title}</ProjectTitle>
+      <ProjectTitle ref={props.refProp}>{props.proj_title}</ProjectTitle>
       <div
         style={{
           display: "flex",
@@ -26,51 +27,47 @@ function ProjectItem(props) {
       >
         <ProjectImage src={props.img_src} alt={props.img_alt} />
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            marginTop: "20px",
-            width: "100%",
-          }}
-        >
-          <ProjectTech>
-            <ProjectLink href={props.repo_href} target="_blank">
-              Repo
-            </ProjectLink>
-            <ProjectLink href={props.live_href} target="_blank">
-              Live
-            </ProjectLink>
-            <div style={{ marginTop: "0px", display: "flex" }} className="tech">
-              <button
-                className={skills ? "tech-btn closed" : "tech-btn "}
-                onClick={() => setSkills(!skills)}
-              >
-                {" "}
-                >
-              </button>{" "}
-              <p>Tech</p>
-            </div>
-            <div className="skills">
-              {skills &&
-                props.stack.map((item) => (
-                  <Skill
-                    color={colors.black}
-                    margin="5px 0px 5px 10px"
-                    fontsize="12px"
-                  >
-                    {item}
-                  </Skill>
-                ))}
-            </div>
-          </ProjectTech>
-
+        <div className="project-details">
           <ProjectDesc>
             <div className="description">
               {props.desc}
               <span> {props.subject}</span>
             </div>
           </ProjectDesc>
+          <ProjectTech className="cl-effect-1">
+            <ProjectLink
+              href={props.repo_href}
+              target="_blank"
+              className="repo"
+            >
+              Repo
+            </ProjectLink>
+            <ProjectLink href={props.live_href} target="_blank">
+              Live
+            </ProjectLink>
+
+            <div className="tech">
+              <button
+                className={skills ? "tech-btn closed" : "tech-btn "}
+                onClick={() => setSkills(!skills)}
+              >
+                <FontAwesomeIcon icon="chevron-circle-right" size="1.6x" />
+              </button>
+              <p>Tech</p>
+            </div>
+          </ProjectTech>
+          <div className="skills">
+            {skills &&
+              props.stack.map((item) => (
+                <Skill
+                  color={colors.black}
+                  margin="5px 0px 5px 10px"
+                  fontsize="12px"
+                >
+                  {item}
+                </Skill>
+              ))}
+          </div>
         </div>
       </div>
     </ProjectItemWrapper>

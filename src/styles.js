@@ -1,4 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import cx from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { colors } from "./constant_styles";
 
@@ -79,18 +82,56 @@ export const PageTitle = styled.h1`
 
 export const NextPage = styled(Link)`
   position: relative;
-  border: 1px solid ${colors.outerspace};
+  border: 1px solid ${({ color }) => (color ? color : colors.outerspace)};
   padding: 15px 30px;
   margin: ${({ margin }) => (margin ? margin : "30px auto 10px auto")};
   display: block;
   width: fit-content;
   text-decoration: none;
-  color: ${colors.outerspace};
- 
+  color: ${({ color }) => (color ? color : colors.outerspace)};
+
   :hover {
     color: ${({ hovercolor }) => (hovercolor ? hovercolor : colors.white)};
-    border: 2px solid ${({ hovercolor }) =>
-      hovercolor ? hovercolor : colors.white};
+    border: 2px solid
+      ${({ hovercolor }) => (hovercolor ? hovercolor : colors.white)};
+  }
+`;
+
+export const Button = React.forwardRef(({ className, ...props }, ref) => {
+  return (
+    <button className={cx("Button", className)} ref={ref} {...props}>
+      <FontAwesomeIcon icon="chevron-down" />
+    </button>
+  );
+});
+
+export const Down = styled(Button)`
+  background: transparent;
+  color: ${({ color }) => (color ? color : colors.slategrey)};
+  border: none;
+  font-size: 1.2em;
+  z-index: 11;
+  animation: bounce 2s linear infinite;
+  :hover,
+  :focus {
+    cursor: pointer;
+    color: ${colors.vermilion};
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
   }
 `;
 

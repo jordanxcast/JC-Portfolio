@@ -15,7 +15,7 @@ const FooterLinksContainer = styled.div`
     margin: 0px auto;
   }
 
-  .link {
+  .footer-link {
     width: 50px;
     border-radius: 5px;
     padding: 5px;
@@ -24,20 +24,20 @@ const FooterLinksContainer = styled.div`
     text-align: center;
   }
 
-  .logo {
+  .footer-logo {
     font-size: 2rem;
     height: 90%;
     width: 90%;
   }
 
-  .link {
+  .footer-link {
     :hover {
-      animation-name: link;
+      animation-name: footer-link;
       animation-duration: 1s;
       color: ${colors.slategrey};
       border: 1px solid ${colors.offwhite};
 
-      @keyframes link {
+      @keyframes footer-link {
         from {
           color: ${colors.purplegrey};
           border: 1px solid ${colors.purplegrey};
@@ -54,28 +54,31 @@ const FooterLinksContainer = styled.div`
 const FooterLinks = (props) => {
   return (
     <FooterLinksContainer>
-      <Link href="/about" className="link">
-        <FontAwesomeIcon className="logo" icon={["fab", "linkedin"]} />
+      <Link href="/about" className="footer-link">
+        <FontAwesomeIcon className="footer-logo" icon={["fab", "linkedin"]} />
       </Link>
 
-      <Link href="/about" className="link">
-        <FontAwesomeIcon className="logo" icon={["fab", "github"]} />
+      <Link href="/about" className="footer-link">
+        <FontAwesomeIcon className="footer-logo" icon={["fab", "github"]} />
       </Link>
 
-      <Link href="/about" className="link">
-        <FontAwesomeIcon className="logo" icon={["fab", "stack-overflow"]} />
+      <Link href="/about" className="footer-link">
+        <FontAwesomeIcon
+          className="footer-logo"
+          icon={["fab", "stack-overflow"]}
+        />
       </Link>
 
-      <Link href="/about" className="link">
-        <FontAwesomeIcon className="logo" icon={["fab", "instagram"]} />
+      <Link href="/about" className="footer-link">
+        <FontAwesomeIcon className="footer-logo" icon={["fab", "instagram"]} />
       </Link>
 
-      <Link href="/about" className="link">
-        <FontAwesomeIcon className="logo" icon={["fab", "angellist"]} />
+      <Link href="/about" className="footer-link">
+        <FontAwesomeIcon className="footer-logo" icon={["fab", "angellist"]} />
       </Link>
 
-      <a href="/about" className="link">
-        <FontAwesomeIcon className="logo" icon={["fab", "trello"]} />
+      <a href="/about" className="footer-link">
+        <FontAwesomeIcon className="footer-logo" icon={["fab", "trello"]} />
       </a>
     </FooterLinksContainer>
   );

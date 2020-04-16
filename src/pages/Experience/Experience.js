@@ -34,6 +34,9 @@ function Experience(props) {
     "SCRUM",
     "Git",
     "GitHub",
+    "Figma",
+    "Trello",
+    "Jira",
   ];
 
   return (
@@ -65,8 +68,8 @@ function Experience(props) {
         </div>
       </Skills>
 
-      <NextPage to="/about" margin="35% auto 10px auto" top="20%">
-        about me
+      <NextPage to="/projects" margin="80px auto 10px auto" top="20%">
+        my recent projects
       </NextPage>
 
       <Footer bottom="-30px" icons="show" left="0px" />

@@ -30,7 +30,9 @@ function NavBar(props) {
           <Burger open={menu} />
         </MobileButton>
 
-        {menu && <MobileNav onClick={() => setMenu(!menu)} />}
+        {menu && (
+          <MobileNav onClick={() => setMenu(!menu)} cb={() => setMenu(!menu)} />
+        )}
       </NavWrapper>
     </>
   );

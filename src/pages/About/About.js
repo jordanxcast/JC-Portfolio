@@ -7,7 +7,7 @@ import {
   AboutWrapper,
   BackgroundImg,
 } from "./About.style";
-import { Footer } from "../../components/Footer/Footer";
+// import { Footer } from "../../components/Footer/Footer";
 import Succulent from "../../images/Succulent.png";
 import Self from "../../images/Self.png";
 
@@ -18,7 +18,7 @@ function About(props) {
   return (
     <PageWrapper bgColor={colors.purplegrey} alignContent="center">
       <AboutPageContainer>
-        <div className='About-wrap'>
+        <div className="About-wrap">
           <PageTitle
             align="center"
             margin="40px auto auto auto"
@@ -59,8 +59,8 @@ function About(props) {
         </AboutWrapper>
       </AboutPageContainer>
 
-      <NextPage to="/projects" margin="100px auto 0px auto">
-        recent projects
+      <NextPage to="/experience" margin="100px auto 0px auto">
+        my experience
       </NextPage>
       {/* <Footer bottom="-30px" margintop="100px" /> */}
     </PageWrapper>
