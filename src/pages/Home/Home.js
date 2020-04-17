@@ -22,8 +22,8 @@ function Home(props) {
   }
 
   return (
-    <PageWrapper bgColor={colors.black}>
-      <Header margin="100px 20px">
+    <PageWrapper bgColor={colors.black} padding="30px 10px">
+      <Header margin="30px 10px">
         <h1>
           Hello, I'm <span className="name">Jordan Castillo</span>
         </h1>
@@ -38,7 +38,7 @@ function Home(props) {
         top="90%"
         color={colors.mint}
       >
-        recent projects
+        <button type='button'>recent projects</button>
       </NextPage>
     </PageWrapper>
   );

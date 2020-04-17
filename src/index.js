@@ -7,9 +7,9 @@ import App from "./App";
 import PortfolioContextProvider from "./PortfolioContext";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faMobileAlt, faDrawPolygon, faLaptopCode, faChevronDown, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { faCheckSquare, faMobileAlt, faDrawPolygon, faLaptopCode, faChevronDown, faChevronCircleRight, faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faCheckSquare, faMobileAlt, faDrawPolygon, faLaptopCode, faChevronDown, faChevronCircleRight);
+library.add(fab, faCheckSquare, faMobileAlt, faDrawPolygon, faLaptopCode, faChevronDown, faChevronCircleRight, faEnvelope, faArrowRight);
 
 ReactDOM.render(
   <BrowserRouter>

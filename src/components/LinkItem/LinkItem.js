@@ -1,16 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const LinksContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   width: 80%;
+  max-width: 900px;
   justify-content: space-between;
   margin: ${({ margin }) => (margin ? margin : "50px auto")};
-  height: ${({ height }) => (height ? height : "50px")};
+  /* height: ${({ height }) => (height ? height : "50px")}; */
+  height: fit-content;
   align-items: center;
+    @media (min-width: 400px) {
+    width: 100%;
+  }
+
+    @media (min-width: 500px) {
+    width: 100%;
+  }
+
+  @media (min-width: 600px) {
+    width: 80%;
+  }
 
   .link {
     width: 50px;
@@ -18,6 +31,10 @@ const LinksContainer = styled.div`
     border-radius: 5px;
     padding: ${({ linkpadding }) => (linkpadding ? linkpadding : "10px")};
     color: ${colors.offwhite};
+    margin: 8px;
+    @media (min-width: 600px) {
+      margin: 5px;
+    }
   }
 
   .logo {
@@ -50,27 +67,65 @@ const LinksContainer = styled.div`
 function Links(props) {
   return (
     <LinksContainer margin={props.margin}>
-      <Link href="/about" className="link">
+      <a
+        href="mailto: jordanxcallaway@gmail.com"
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon className="logo" icon={"envelope"} />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/jordan-castillo/"
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="logo" icon={["fab", "linkedin"]} />
-      </Link>
+      </a>
 
-      <Link href="/about" className="link">
+      <a
+        href="https://github.com/jordanxcast"
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="logo" icon={["fab", "github"]} />
-      </Link>
+      </a>
 
-      <Link href="/about" className="link">
+      <a
+        href="https://stackoverflow.com/users/13343529/jordan-castillo?tab=profile"
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="logo" icon={["fab", "stack-overflow"]} />
-      </Link>
+      </a>
 
-      <Link href="/about" className="link">
+      <a
+        href="https://www.instagram.com/jordanxcast/"
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="logo" icon={["fab", "instagram"]} />
-      </Link>
+      </a>
 
-      <Link href="/about" className="link">
+      <a
+        href="https://angel.co/u/jordan-castillo-2"
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="logo" icon={["fab", "angellist"]} />
-      </Link>
+      </a>
 
-      <a href="/about" className="link">
+      <a
+        href="https://trello.com/jordanxcast"
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="logo" icon={["fab", "trello"]} />
       </a>
     </LinksContainer>

@@ -86,7 +86,7 @@ export const ProjectTech = styled.div`
   width: 100%;
   color: ${colors.darkpurple};
   padding: 0px;
-  font-size: 14px;
+  font-size: 16px;
 
   .tech {
     display: flex;
@@ -163,7 +163,7 @@ export const ProjectDesc = styled.div`
   padding: 10px 0px;
   width: 100%;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
 
   .description {
     color: ${colors.outerspace};
@@ -184,6 +184,25 @@ export const ProjectLink = styled.a`
   line-height: 35px;
   width: 30%;
   padding-bottom: 10px;
+  animation: blinking 5s infinite;
+
+  @keyframes blinking {
+    0% {
+      color: ${colors.black};
+    }
+    25% {
+      color: ${colors.mint};
+    }
+    50% {
+      color: ${colors.blue};
+    }
+    75% {
+      color: ${colors.purplegrey};
+    }
+    100% {
+      color: ${colors.deeperpurple};
+    }
+  }
 
   :hover {
     color: ${colors.vermilion};

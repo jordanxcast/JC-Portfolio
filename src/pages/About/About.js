@@ -4,10 +4,10 @@ import { PageWrapper, PageTitle, NextPage } from "../../styles";
 import {
   AboutPageContainer,
   AboutSelf,
-  AboutWrapper,
+  AboutBio,
   BackgroundImg,
 } from "./About.style";
-// import { Footer } from "../../components/Footer/Footer";
+import { Footer } from "../../components/Footer/Footer";
 import Succulent from "../../images/Succulent.png";
 import Self from "../../images/Self.png";
 
@@ -15,8 +15,10 @@ function About(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+
   return (
-    <PageWrapper bgColor={colors.purplegrey} alignContent="center">
+    <PageWrapper bgColor={colors.purplegrey}>
+      <BackgroundImg src={Succulent} alt="image taken by jordan castillo" />
       <AboutPageContainer>
         <div className="About-wrap">
           <PageTitle
@@ -27,12 +29,10 @@ function About(props) {
             About Me
           </PageTitle>
 
-          <AboutSelf src={Self} alt="image of self" />
+          <AboutSelf src={Self} alt="image of jordan castillo" />
         </div>
-        <BackgroundImg src={Succulent} alt="image of self" />
-        {/* <h2 style={{textAlign:'center'}}>Jordan Castillo</h2> */}
 
-        <AboutWrapper>
+        <AboutBio>
           <div>
             Currently enrolled at Thinkful, I am cultivating my path to graduate
             from the Engineering Immersion Full Stack program and set my
@@ -56,13 +56,20 @@ function About(props) {
             and family, cozied up reading a book with some coffee, or out
             enjoying some nature.
           </div>
-        </AboutWrapper>
-      </AboutPageContainer>
+        </AboutBio>
 
-      <NextPage to="/experience" margin="100px auto 0px auto">
-        my experience
-      </NextPage>
-      {/* <Footer bottom="-30px" margintop="100px" /> */}
+        <div className="bottom">
+          <NextPage
+            to="/experience"
+            margin="100px auto 0px auto"
+            hovercolor={colors.vermilion}
+            color={colors.offwhite}
+          >
+            my experience
+          </NextPage>
+        </div>
+      </AboutPageContainer>
+      <Footer left="-30px" bottom="-30px" margintop="0px" maxwidth="100vw" />
     </PageWrapper>
   );
 }

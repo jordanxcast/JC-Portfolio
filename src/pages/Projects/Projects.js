@@ -14,24 +14,34 @@ const Overview = styled.div`
   flex-direction: column;
   padding: 30px;
   width: 100%;
-  margin: 50px auto 20px;
+
+  height: fit-content;
+  margin: 50px auto 60px;
   justify-content: space-between;
 
-  @media (min-width: 800px) {
+  @media (min-width: 900px) {
     flex-direction: row;
     width: 90%;
+  }
+  @media (min-width: 1000px) {
+    max-width: 1500px;
   }
 
   .overview-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
-    width: 80%;
+    margin: 10px auto;
+    width: 50%;
     padding: 30px 0px 20px;
-    border-top: 1px solid ${colors.vermilion};
+    height: fit-content;
+    border-top: none;
     border-bottom: 1px solid ${colors.vermilion};
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
+      border-left: none;
+      border-right: none;
+      border-top: 1px solid ${colors.vermilion};
+      border-bottom: 1px solid ${colors.vermilion};
       margin: 30px;
       width: 30%;
     }
@@ -101,8 +111,8 @@ function Projects(props) {
           repo_href="https://github.com/kraigwilliams/motive-client"
           live_href="https://folkul.now.sh/"
           stack={["React.js", "Node.js", "Express", "Knex", "PostgreSQL"]}
-          desc="Folkul is a social media concept for users to "
-          subject=""
+          desc="Folkul is a social media concept for users to document, refine, and share sincere ideas."
+          subject="You can privately gather your thoughts - this can be small ideas to the next greatest invention. You can connect to other users and then share this idea with them - getting criticism, feedback and overall collaboration. Coming soon: custom user profiles, ReactNative conversion and additional features to improve the user experience."
         />
 
         <ProjectItem
@@ -121,20 +131,22 @@ function Projects(props) {
           proj_title="Catalan Repetition"
           img_src={CatalanRepetition}
           img_alt="Project called Catalan Repetition's Interface"
-          repo_href="https://github.com/stronghearth/spaced-repetition7"
+          repo_href="https://github.com/stronghearth/spaced-repetition"
           live_href="https://catalan-repetition.now.sh/register"
           stack={["React.js", "Node.js", "Express", "Knex", "PostgreSQL"]}
           desc="Catalan Repetition is a platform where users can practice learning the Catalan language via the spaced repetition technique."
-          subject="Folowing the spaced repetition technique, the words you answer incorrectly will be repeated sooner and the more times you answer a word correctly, you will see it less frequently."
+          subject="Following the spaced repetition technique, the words you answer incorrectly will be repeated sooner. Furthermore, the more times you answer a word correctly, you will see it less frequently."
         />
       </Section>
 
       <NextPage
         to="/contact"
         margin="80px auto 10px auto"
-        hovercolor={colors.vermilion}
+        color={colors.mint}
+        hovercolor={colors.deeperpurple}
+        hoverborder={colors.mint}
       >
-        let's collaborate!
+        <button type="button">let's collaborate!</button>
       </NextPage>
       <Footer bgcolor={colors.offwhite} bottom="-30px" left="0px" />
     </PageWrapper>

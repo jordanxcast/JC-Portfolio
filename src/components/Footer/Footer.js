@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { colors } from "../../constant_styles";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -54,30 +53,69 @@ const FooterLinksContainer = styled.div`
 const FooterLinks = (props) => {
   return (
     <FooterLinksContainer>
-      <Link href="/about" className="footer-link">
+      <a
+        href="mailto:jordanxcallaway@gmail.com"
+        className="footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon className="footer-logo" icon={"envelope"} />
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/jordan-castillo/"
+        className="footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="footer-logo" icon={["fab", "linkedin"]} />
-      </Link>
+      </a>
 
-      <Link href="/about" className="footer-link">
+      <a
+        href="https://github.com/jordanxcast"
+        className="footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="footer-logo" icon={["fab", "github"]} />
-      </Link>
+      </a>
 
-      <Link href="/about" className="footer-link">
+      <a
+        href="https://stackoverflow.com/users/13343529/jordan-castillo?tab=profile"
+        className="footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon
           className="footer-logo"
           icon={["fab", "stack-overflow"]}
         />
-      </Link>
+      </a>
 
-      <Link href="/about" className="footer-link">
+      <a
+        href="https://www.instagram.com/jordanxcast/"
+        className="footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="footer-logo" icon={["fab", "instagram"]} />
-      </Link>
+      </a>
 
-      <Link href="/about" className="footer-link">
+      <a
+        href="https://angel.co/u/jordan-castillo-2"
+        className="footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="footer-logo" icon={["fab", "angellist"]} />
-      </Link>
+      </a>
 
-      <a href="/about" className="footer-link">
+      <a
+        href="https://trello.com/jordanxcast"
+        className="footer-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon className="footer-logo" icon={["fab", "trello"]} />
       </a>
     </FooterLinksContainer>
@@ -159,10 +197,29 @@ const FooterLeft = styled.div`
   > div {
     font-size: 14px;
     padding-bottom: 5px;
+    > a {
+      text-decoration: none;
+      color: ${colors.slategrey};
+
+      :hover {
+        cursor: pointer;
+        color: ${colors.purplegrey};
+        padding: 0px 10px;
+        border-left: 1px solid ${colors.offwhite};
+        border-right: 1px solid ${colors.offwhite};
+      }
+    }
   }
 
   @media (min-width: 900px) {
     text-align: left;
+    > div > a:hover {
+      cursor: pointer;
+      color: ${colors.purplegrey};
+      padding: 0px 5px 0px 0px;
+      border-left: none;
+      border-right: 1px solid ${colors.offwhite};
+    }
   }
 `;
 
@@ -177,8 +234,14 @@ export const Footer = (props) => {
     >
       <FooterTop>
         <FooterLeft>
-          <div>Resume</div>
-          <div>jordanxcallaway@gmail.com</div>
+          {/* <div>
+            <a href={Resume}>Resume</a>
+          </div> */}
+          <div>
+            <a href=" mailto:jordanxcallaway@gmail.com">
+              jordanxcallaway@gmail.com
+            </a>
+          </div>
         </FooterLeft>
         <LinkContainer>
           <FooterLinks margin="0px auto" height="30px" linkpadding="3px" />

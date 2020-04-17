@@ -58,9 +58,7 @@ function Experience(props) {
       </ExperienceSection>
 
       <Skills>
-        <h2 style={{ margin: "50px 10px 10px 10px", color: colors.vermilion }}>
-          Skills
-        </h2>
+        <h2>Skills</h2>
         <div className="skills-container">
           {skills.map((skll, idx) => {
             return <Skill key={idx}>{skll}</Skill>;
@@ -68,7 +66,12 @@ function Experience(props) {
         </div>
       </Skills>
 
-      <NextPage to="/projects" margin="80px auto 10px auto" top="20%">
+      <NextPage
+        to="/projects"
+        margin="80px auto 10px auto"
+        top="20%"
+        hovercolor={colors.teal}
+      >
         my recent projects
       </NextPage>
 

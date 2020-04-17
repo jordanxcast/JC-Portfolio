@@ -8,6 +8,7 @@ import { colors } from "./constant_styles";
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  height: fit-content;
   min-height: -webkit-fill-available;
   width: -webkit-fill-available;
   margin: auto;
@@ -18,6 +19,49 @@ export const PageWrapper = styled.div`
   background-color: ${(props) => (props ? props.bgColor : colors.offwhite)};
   /* align-content: ${({ alignContent }) =>
     alignContent ? alignContent : "center"};    */
+
+
+  .kw-form-wrapper{
+    .kw-form-wrapper {
+    > [id^='credit-'] {
+    > [id^='credit-link-'] {
+      color: ${colors.black} !important;  
+      max-width: 0px; 
+      position: absolute;
+      left: -100px !important;  
+      z-index: -11 !important;
+      opacity: 0 !important;
+      }     
+    }
+    [class*="kw-message"] {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+   
+  }
+   .kw-message-error {
+    text-align: center !important;
+    margin: auto !important;
+    background: transparent !important;
+    border: 1px solid !important;
+    color: ${colors.vermilion};
+  }
+  .kw-message-110293.kw-message-warning {
+    text-align: center !important;
+    margin: auto !important;
+    background: transparent !important;
+    border: 1px solid !important;
+    color: ${colors.deeperpurple};
+
+    > a {
+      color: ${colors.deeperpurple};
+      text-decoration: none;
+    }
+  }
+}
+  }
+
+
 
 `;
 
@@ -85,15 +129,61 @@ export const NextPage = styled(Link)`
   border: 1px solid ${({ color }) => (color ? color : colors.outerspace)};
   padding: 15px 30px;
   margin: ${({ margin }) => (margin ? margin : "30px auto 10px auto")};
-  display: block;
   width: fit-content;
   text-decoration: none;
   color: ${({ color }) => (color ? color : colors.outerspace)};
+  transition: all 0.5s;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  transition: 0.5s;
+  outline: none;
 
-  :hover {
-    color: ${({ hovercolor }) => (hovercolor ? hovercolor : colors.white)};
-    border: 2px solid
-      ${({ hovercolor }) => (hovercolor ? hovercolor : colors.white)};
+  > button {
+    background: transparent;
+    font-size: 16px;
+    color: ${({ color }) => (color ? color : colors.outerspace)};
+    border: none;
+    cursor: pointer;
+
+    :hover {
+      color: ${({ hovercolor }) =>
+        hovercolor ? hovercolor : colors.vermilion};
+    }
+  }
+  :hover,
+  :active,
+  :focus,
+  > button:active {
+    cursor: pointer;
+    color: ${({ hovercolor }) => (hovercolor ? hovercolor : colors.vermilion)};
+    /* border: 1px solid
+      ${({ hoverborder }) => (hoverborder ? hoverborder : colors.offwhite)}; */
+    > button {
+      color: ${({ hovercolor }) =>
+        hovercolor ? hovercolor : colors.vermilion};
+    }
+  }
+
+  :after {
+    /* font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important; */
+    content: "→";
+    font-size: 30px;
+    position: absolute;
+    opacity: 0;
+    top: 8px;
+    color: ${({ hovercolor }) => (hovercolor ? hovercolor : colors.vermilion)};
+    right: -50px;
+    transition: 0.5s;
+  }
+
+  :hover:after,
+  :active:after,
+  :focus:after,
+  > button:after {
+    opacity: 1;
+    right: -28px;
   }
 `;
 

@@ -18,6 +18,7 @@ const MenuLink = styled(Link)`
   text-decoration: none;
   margin-right: 0px;
   font-size: 16px;
+  opacity: 1;
   margin-left: ${(props) => (props ? props.marginLeft : "0px")};
   :hover {
     cursor: pointer;
@@ -35,36 +36,44 @@ const MenuLink = styled(Link)`
   @keyframes fadein {
     from {
       opacity: 0;
+      margin: 0;
     }
     to {
       opacity: 1;
+      /* margin: 5px 20px 5px 20px; */
     }
   }
   @-moz-keyframes fadein {
     /* Firefox */
     from {
       opacity: 0;
+      margin: 0;
     }
     to {
       opacity: 1;
+      /* margin: 5px 20px 5px 20px; */
     }
   }
   @-webkit-keyframes fadein {
     /* Safari and Chrome */
     from {
       opacity: 0;
+      margin: 0;
     }
     to {
       opacity: 1;
+      /* margin: 5px 20px 5px 20px; */
     }
   }
   @-o-keyframes fadein {
     /* Opera */
     from {
       opacity: 0;
+      margin: 0;
     }
     to {
       opacity: 1;
+      /* margin: 5px 20px 5px 20px; */
     }
   }
 `;
@@ -111,16 +120,12 @@ const Navigation = (props) => {
 
   return (
     <NavLinks direction={props.direction}>
-      {/* <MenuLink className='nav-links' to='/'>
-        Home
-      </MenuLink> */}
+      <MenuLink className="nav-links active" to="/projects">
+        Projects
+      </MenuLink>
 
       <MenuLink className="nav-links active" to="/about">
         About
-      </MenuLink>
-
-      <MenuLink className="nav-links active" to="/projects">
-        Projects
       </MenuLink>
 
       <MenuLink className="nav-links active" to="/experience">
@@ -131,7 +136,7 @@ const Navigation = (props) => {
         Contact
       </MenuLink>
 
-      {/* <MenuLink className="nav-links">Lifecycle</MenuLink> */}
+      {/* <MenuLink className="nav-links">Blog</MenuLink> */}
     </NavLinks>
   );
 };
@@ -174,7 +179,6 @@ const MobileNavigation = styled.nav`
   width: 150px;
   max-width: 150px;
   color: ${colors.darkgrey};
-  /* align-self: flex-end; */
   position: fixed;
   top: 70px;
   right: 0;
@@ -193,19 +197,19 @@ const MobileNavigation = styled.nav`
   }
 
   /* for chrome and safari*/
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 2s;
   -webkit-animation-name: slidein;
 
   /*for firefox*/
-  -moz-animation-duration: 1s;
+  -moz-animation-duration: 2s;
   -moz-animation-name: slidein;
 
   /* for opera*/
-  -o-animation-duration: 1s;
+  -o-animation-duration: 2s;
   -o-animation-name: slidein;
 
   /* Standard syntax*/
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-name: slidein;
   /* animation: slidein 1s ease-in; */
 
@@ -214,12 +218,6 @@ const MobileNavigation = styled.nav`
       padding: 0px;
       width: 0;
       right: -150px;
-    }
-
-    50% {
-      padding: 5px 15px;
-      width: 90px;
-      right: -90px;
       opacity: 0;
     }
 

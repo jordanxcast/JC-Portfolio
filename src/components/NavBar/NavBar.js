@@ -5,7 +5,7 @@ import Burger from "./Burger";
 
 function NavBar(props) {
   const [menu, setMenu] = useState(false);
-  const [logo, setLogo] = useState(false);
+  const [logo] = useState(false);
 
   function clickLogo() {
     let elm = document.getElementById("logo");

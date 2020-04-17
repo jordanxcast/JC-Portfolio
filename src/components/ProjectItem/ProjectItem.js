@@ -31,6 +31,7 @@ function ProjectItem(props) {
           <ProjectDesc>
             <div className="description">
               {props.desc}
+              <br />
               <span> {props.subject}</span>
             </div>
           </ProjectDesc>

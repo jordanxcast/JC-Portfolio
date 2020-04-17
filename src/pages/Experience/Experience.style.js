@@ -6,14 +6,22 @@ import { colors } from "../../constant_styles";
 export const Skills = styled.section`
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 50px auto;
+  padding: 30px;
   width: 80%;
+  max-width: 1000px;
   color: ${colors.teal};
-
+  align-items: flex-start;
+  > h2 {
+    text-align: left;
+    color: ${colors.vermilion};
+    margin-left: 10px;
+  }
   .skills-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin: 0px;
   }
 `;
 
@@ -73,14 +81,16 @@ export const ExperienceSection = styled.section`
   display: flex;
   flex-direction: column;
   width: 80%;
+
   margin: auto;
+  align-items: center;
 `;
 
 export const ExperienceItemWrapper = styled.div`
   border: 1px solid ${colors.lightgrey};
   padding: 20px 20px 0px 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   margin: 40px auto 0px auto;
   color: ${colors.mint};
@@ -95,18 +105,21 @@ export const ExperienceItemWrapper = styled.div`
       margin-bottom: 20px;
     }
   }
+
+  @media (min-width: 500px) {
+    flex-direction: row;
+  }
 `;
 
 const Expand = styled.button`
   padding: 10px 20px;
-  margin-bottom: 20px;
   height: fit-content;
-
   background: transparent;
   align-self: flex-end;
   font-size: 14px;
   border: 1px solid ${colors.black};
   color: ${colors.mint};
+  margin: auto auto 20px;
 
   :hover {
     cursor: pointer;
@@ -114,6 +127,10 @@ const Expand = styled.button`
     color: ${colors.lightgrey};
     background-color: ${colors.slategrey};
     opacity: 50%;
+  }
+
+  @media (min-width: 500px) {
+    margin: auto 0px 20px auto;
   }
 `;
 
@@ -126,24 +143,36 @@ const ExpandedSection = styled.ul`
   padding: 20px;
   color: ${colors.offwhite};
   font-size: 14px;
+  line-height: 20px;
 
   > li {
     list-style: none;
     margin: 10px 0px;
   }
+
+  @media (min-width: 900px) {
+    > li {
+      margin: auto;
+    }
+  }
 `;
 
 const ExpItem = styled.div`
+  width: 100%;
+  max-width: 1000px;
+  @media (min-width: 900px) {
+    width: 80%;
+  }
   .expanding-appear {
     opacity: 0;
     padding: 0px 20px;
-    font-size: 0px;
+    line-height: 0px;
     color: ${colors.teal};
   }
   .expanding-appear-active {
     opacity: 1;
     padding: 20px;
-    font-size: 14px;
+    line-height: 20px;
     transition: all 600ms linear;
   }
   .expanding-appear-done {

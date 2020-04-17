@@ -26,8 +26,10 @@ function Contact(props) {
     <PageWrapper
       align="right"
       bgColor={colors.black}
-      padding="30px 30px 5px 30px"
-      class="kwes-form"
+      padding="30px 10px 5px 10px"
+      className="kwes-form"
+      no-reload
+      success-message="Thank you for reaching out!"
     >
       <PageTitle margin="0px auto 30px auto" color={colors.vermilion}>
         Get In Touch
@@ -35,67 +37,65 @@ function Contact(props) {
       <ContactDescription margin="10px auto">
         Please reach out if you would like to collaborate on a project, learn
         more about my work, or just get to know eachother. <br />
-        <span>I am also currently open to new opportunities.</span>
+        <p>I am also currently open to new opportunities.</p>
       </ContactDescription>
 
       <ContactForm
         method="POST"
+        no-reload
+        success-message="Thank you for reaching out!"
         action="https://kwes.io/api/foreign/forms/O8pqpOWh7CpKS52NUXsk"
+        id="contact-form"
       >
         <ContactLabel htmlFor="contact_name">Your Name</ContactLabel>
         <ContactInput
           id="contact_name"
-          name="contact_name"
+          name="name"
           type="text"
           placeholder="Carl Sagan"
           rules="required|max:255"
+          required
         ></ContactInput>
 
         <ContactLabel htmlFor="contact_email">Email</ContactLabel>
         <ContactInput
           id="contact_email"
-          name="contact_email"
+          name="email"
           type="text"
           placeholder="palebluedot@gmail.com"
+          rules="email"
+          required
         ></ContactInput>
 
         <ContactLabel htmlFor="subject">Subject</ContactLabel>
         <ContactInput
           id="subject"
-          name="contact_subject"
+          name="subject"
           type="text"
           placeholder="Cosmos"
+          required
         ></ContactInput>
 
         <ContactLabel htmlFor="contact_message">Message</ContactLabel>
         <ContactTextarea
           id="contact_message"
-          name="contact_message"
+          name="message"
           type="textarea"
           placeholder='"We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology."'
+          required
         ></ContactTextarea>
 
         <FormButton type="submit">Send</FormButton>
       </ContactForm>
 
-      {/* <h2 style={{ margin: "30px auto" }}>Links</h2> */}
-      {/* <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          margin: "100px 10px 10px 10px",
-        }}
-      >
-      </div> */}
-      <ContactDescription>
+      <ContactDescription className="other-places">
         Here are some other places you can find me.
       </ContactDescription>
       <Links margin="50px auto 100px" />
       <Footer
-        left="-30px"
+        left="-10px"
         bottom="-5px"
-        maxwidth="auto"
+        maxwidth="100vw"
         margin="60px 0px 0px"
       />
     </PageWrapper>
