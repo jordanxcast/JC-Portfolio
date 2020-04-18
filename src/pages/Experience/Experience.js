@@ -12,10 +12,11 @@ import { PortfolioContext } from "../../PortfolioContext";
 
 function Experience(props) {
   const { experienceItems } = useContext(PortfolioContext);
-  console.log(experienceItems, "!!!");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+  document.title = "Jordan Castillo - Experience";
   const skills = [
     "Html5",
     "CSS",

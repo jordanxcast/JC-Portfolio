@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { PageWrapper, PageTitle } from "../../styles";
 import { colors } from "../../constant_styles";
-import Links from "../../components/LinkItem/LinkItem";
+import { Links, EmailLink } from "../../components/LinkItem/LinkItem";
 import { Footer } from "../../components/Footer/Footer";
 import {
   ContactDescription,
@@ -17,11 +17,13 @@ function Contact(props) {
     window.scrollTo(0, 0);
   });
 
+  document.title = "Jordan Castillo - Contact";
+
   let kwesScript = document.createElement("script");
 
   kwesScript.setAttribute("src", "https://kwes.io/js/kwes.js");
 
-  document.head.appendChild(kwesScript);
+  // document.head.appendChild(kwesScript);
   return (
     <PageWrapper
       align="right"
@@ -40,7 +42,11 @@ function Contact(props) {
         <p>I am also currently open to new opportunities.</p>
       </ContactDescription>
 
-      <ContactForm
+      <div>
+        <EmailLink />
+      </div>
+
+      {/* <ContactForm
         method="POST"
         no-reload
         success-message="Thank you for reaching out!"
@@ -86,7 +92,7 @@ function Contact(props) {
         ></ContactTextarea>
 
         <FormButton type="submit">Send</FormButton>
-      </ContactForm>
+      </ContactForm> */}
 
       <ContactDescription className="other-places">
         Here are some other places you can find me.

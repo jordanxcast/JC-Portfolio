@@ -15,6 +15,7 @@ function About(props) {
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+  document.title = "Jordan Castillo - About";
 
   return (
     <PageWrapper bgColor={colors.purplegrey}>
@@ -43,18 +44,25 @@ function About(props) {
             interest became an obsession.
           </div>
           <div>
-            {" "}
-            I often geek out about elegant designs, great user experience, and
-            well-written code to execute efficiently. The notion of building
-            tools that can help people and the world around me is what inspires
-            me to learn as much as I can and become the best I can be at this
-            skill. That is what I aim to conquer each day.
+            Having an innate passion for curiosity, creativity, and reasoning, I
+            strive to consistently improve myself and the world that surrounds
+            me. My first true inspiration growing up was photography - it was an
+            artistic outlet that allowed me to create and strategically bringing
+            an idea to life. Software development has been an integration of my
+            love for creativity and my root desire to methodically overcome
+            obstacles. There are pieces of all the things I love sprinkled
+            throught my work. Often my designs are inspired by the nature around
+            me, photographs I have taken or ones I admire. The notion that I can
+            build tools that will help people and solve problems on a large
+            scale is what drives me to rise up the challenges I face and
+            constantly learn as much as I can.
           </div>
           <div>
             {" "}
             When I am not writing code, I can be found spending time with my dog
             and family, cozied up reading a book with some coffee, or out
-            enjoying some nature.
+            enjoying some nature. I hope you enjoy taking a look around my
+            porfolio, and please doon't hesistate to reach out or connect.
           </div>
         </AboutBio>
 

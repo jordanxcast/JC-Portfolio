@@ -52,15 +52,16 @@ function ProjectItem(props) {
                 className={skills ? "tech-btn closed" : "tech-btn "}
                 onClick={() => setSkills(!skills)}
               >
-                <FontAwesomeIcon icon="chevron-circle-right" size="1.6x" />
+                <FontAwesomeIcon icon="chevron-circle-right" size="2x" />
               </button>
               <p>Tech</p>
             </div>
           </ProjectTech>
           <div className="skills">
             {skills &&
-              props.stack.map((item) => (
+              props.stack.map((item, idx) => (
                 <Skill
+                  key={idx}
                   color={colors.black}
                   margin="5px 0px 5px 10px"
                   fontsize="12px"

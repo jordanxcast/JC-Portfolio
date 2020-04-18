@@ -25,6 +25,58 @@ const LinksContainer = styled.div`
     width: 80%;
   }
 
+  .email-contact {
+    margin: auto;
+
+  }
+
+  .email-link {
+    width: 200px;
+     position: relative;
+    display: flex;
+    border: 1px solid ${colors.vermilion};
+    border-radius: 5px;
+    padding: ${({ linkpadding }) => (linkpadding ? linkpadding : "10px")};
+    color: ${colors.offwhite};
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    transition: all 0.5s;
+    outline: none;
+    cursor: pointer;
+    @media (min-width: 600px) {
+      margin: 5px;
+    }
+
+    :hover, :active, :focus{
+      color: ${colors.teal};
+      border: 1px solid ${colors.deeperpurple};
+    }
+
+    :after {
+    content: "→";
+    font-size: 30px;
+    position: absolute;
+    opacity: 0;
+    top: 10px;
+    color: ${colors.teal};
+    right: -50px;
+    transition: 0.5s;
+  }
+  :hover:after,
+  :active:after,
+  :focus:after{
+    opacity: 1;
+    right: -28px;
+  }
+  }
+
+  .email-logo{
+    width: 20%;
+    height: 20%;
+    text-align: right;
+  }
   .link {
     width: 50px;
     border: 1px solid ${colors.vermilion};
@@ -64,17 +116,27 @@ const LinksContainer = styled.div`
   }
 `;
 
-function Links(props) {
+export const EmailLink = (props) => {
+  return (
+    <LinksContainer>
+      <div className="email-contact">
+        <a
+          href="mailto: jordanxcallaway@gmail.com"
+          className="email-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Email Me</span>
+          <FontAwesomeIcon className="email-logo" icon={"envelope"} />
+        </a>
+      </div>
+    </LinksContainer>
+  );
+};
+
+export const Links = (props) => {
   return (
     <LinksContainer margin={props.margin}>
-      <a
-        href="mailto: jordanxcallaway@gmail.com"
-        className="link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FontAwesomeIcon className="logo" icon={"envelope"} />
-      </a>
       <a
         href="https://www.linkedin.com/in/jordan-castillo/"
         className="link"
@@ -130,6 +192,4 @@ function Links(props) {
       </a>
     </LinksContainer>
   );
-}
-
-export default Links;
+};

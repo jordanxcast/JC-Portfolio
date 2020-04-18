@@ -65,6 +65,8 @@ function Projects(props) {
     window.scrollTo(0, 0);
   });
 
+  document.title = "Jordan Castillo - Projects";
+
   const myRef = useRef(null);
   const executeScroll = () => scrollToRef(myRef);
 

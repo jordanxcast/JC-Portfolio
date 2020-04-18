@@ -6,7 +6,7 @@ export const BackgroundImg = styled.img`
   height: 60%;
   opacity: 0.5;
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -11;
@@ -41,7 +41,7 @@ export const AboutPageContainer = styled.div`
   }
 
   @media (min-width: 800px) {
-    padding-top: 150px;
+    padding-top: 100px;
   }
 `;
 
