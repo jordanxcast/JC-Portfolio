@@ -3,17 +3,22 @@ import { colors } from "../../constant_styles";
 
 export const BackgroundImg = styled.img`
   width: 100%;
-  height: 60%;
+  height: 100%;
   opacity: 0.5;
+  z-index: -30;
   position: fixed;
+  /* top: 0px; */
+  top: 70px;
+  left: 0px;
+  /* position: fixed;
+  height: 60%;
   top: 55%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -11;
+  transform: translate(-50%, -50%); */
 
   @media (min-width: 600px) {
-    width: 90%;
-    height: 70%;
+    width: 100%;
+    /* height: 70%; */
   }
 `;
 
@@ -24,7 +29,7 @@ export const AboutPageContainer = styled.div`
   margin: auto;
 
   .bottom {
-    margin: 200px auto 0px;
+    margin: 50px auto 50px;
   }
 
   .About-wrap {
@@ -41,7 +46,7 @@ export const AboutPageContainer = styled.div`
   }
 
   @media (min-width: 800px) {
-    padding-top: 100px;
+    padding-top: 50px;
   }
 `;
 
@@ -52,13 +57,6 @@ export const AboutSelf = styled.img`
   height: 150px;
   margin: 10px auto 10px auto;
   object-fit: cover;
-  /* 
-  @media (min-width: 900px) {
-    position: relative;
-    margin-top: 100px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
 `;
 
 export const AboutBio = styled.div`

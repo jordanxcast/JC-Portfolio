@@ -24,7 +24,7 @@ function About(props) {
         <div className="About-wrap">
           <PageTitle
             align="center"
-            margin="40px auto auto auto"
+            margin="10px auto auto auto"
             color={colors.white}
           >
             About Me

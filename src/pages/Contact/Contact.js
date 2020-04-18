@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import { PageWrapper, PageTitle } from "../../styles";
 import { colors } from "../../constant_styles";
-import { Links, EmailLink } from "../../components/LinkItem/LinkItem";
+import { Links } from "../../components/LinkItem/LinkItem";
 import { Footer } from "../../components/Footer/Footer";
 import {
   ContactDescription,
@@ -10,20 +11,56 @@ import {
   ContactInput,
   ContactTextarea,
   FormButton,
+  SuccessfulSubmit,
 } from "./Contact.style";
+import { writeContactsData } from "../../server/server";
 
 function Contact(props) {
+  const [successfulSubmit, setSuccessfulSubmit] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   });
 
   document.title = "Jordan Castillo - Contact";
 
-  let kwesScript = document.createElement("script");
-
-  kwesScript.setAttribute("src", "https://kwes.io/js/kwes.js");
-
+  // let kwesScript = document.createElement("script");
+  // kwesScript.setAttribute("src", "https://kwes.io/js/kwes.js");
   // document.head.appendChild(kwesScript);
+
+  function setStatus(status) {
+    if (status === "successful") {
+      setSuccessfulSubmit(true);
+    }
+
+    setTimeout(() => {
+      setSuccessfulSubmit(false);
+    }, 6000);
+  }
+
+  function handleFormSubmission(e) {
+    e.preventDefault();
+    const { name, email, subject, message } = e.target;
+    const full_name = name.value;
+    const contact_email = email.value;
+    const contact_subject = subject.value;
+    const contact_message = message.value;
+    console.log(full_name, contact_email, contact_subject, contact_message);
+
+    // send value to write in firebase database
+    writeContactsData(
+      full_name,
+      contact_email,
+      contact_subject,
+      contact_message,
+      (status) => setStatus(status)
+    );
+
+    //clear input values
+    name.value = "";
+    email.value = "";
+    subject.value = "";
+    message.value = "";
+  }
   return (
     <PageWrapper
       align="right"
@@ -40,18 +77,31 @@ function Contact(props) {
         Please reach out if you would like to collaborate on a project, learn
         more about my work, or just get to know eachother. <br />
         <p>I am also currently open to new opportunities.</p>
+        {/* <div>
+        <EmailLink />
+      </div> */}
+        {/* {successfulSubmit && ( */}
+        <CSSTransition
+          in={successfulSubmit}
+          timeout={600}
+          classNames="success"
+          unmountOnExit
+          appear
+        >
+          <SuccessfulSubmit>Thank you for reaching out! </SuccessfulSubmit>
+        </CSSTransition>
+        {/* )} */}
       </ContactDescription>
 
-      <div>
-        <EmailLink />
-      </div>
-
-      {/* <ContactForm
-        method="POST"
-        no-reload
-        success-message="Thank you for reaching out!"
-        action="https://kwes.io/api/foreign/forms/O8pqpOWh7CpKS52NUXsk"
+      <ContactForm
+        // method="POST"
+        // no-reload
+        // success-message="Thank you for reaching out!"
+        // action="https://kwes.io/api/foreign/forms/O8pqpOWh7CpKS52NUXsk"
         id="contact-form"
+        onSubmit={(ev) => {
+          handleFormSubmission(ev);
+        }}
       >
         <ContactLabel htmlFor="contact_name">Your Name</ContactLabel>
         <ContactInput
@@ -92,7 +142,7 @@ function Contact(props) {
         ></ContactTextarea>
 
         <FormButton type="submit">Send</FormButton>
-      </ContactForm> */}
+      </ContactForm>
 
       <ContactDescription className="other-places">
         Here are some other places you can find me.

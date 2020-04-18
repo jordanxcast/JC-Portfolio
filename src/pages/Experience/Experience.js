@@ -72,6 +72,7 @@ function Experience(props) {
         margin="80px auto 10px auto"
         top="20%"
         hovercolor={colors.teal}
+        color={colors.paleblue}
       >
         my recent projects
       </NextPage>

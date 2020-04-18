@@ -10,14 +10,13 @@ const LinksContainer = styled.div`
   max-width: 900px;
   justify-content: space-between;
   margin: ${({ margin }) => (margin ? margin : "50px auto")};
-  /* height: ${({ height }) => (height ? height : "50px")}; */
   height: fit-content;
   align-items: center;
-    @media (min-width: 400px) {
+  @media (min-width: 400px) {
     width: 100%;
   }
 
-    @media (min-width: 500px) {
+  @media (min-width: 500px) {
     width: 100%;
   }
 
@@ -27,12 +26,11 @@ const LinksContainer = styled.div`
 
   .email-contact {
     margin: auto;
-
   }
 
   .email-link {
     width: 200px;
-     position: relative;
+    position: relative;
     display: flex;
     border: 1px solid ${colors.vermilion};
     border-radius: 5px;
@@ -49,30 +47,32 @@ const LinksContainer = styled.div`
       margin: 5px;
     }
 
-    :hover, :active, :focus{
+    :hover,
+    :active,
+    :focus {
       color: ${colors.teal};
       border: 1px solid ${colors.deeperpurple};
     }
 
     :after {
-    content: "→";
-    font-size: 30px;
-    position: absolute;
-    opacity: 0;
-    top: 10px;
-    color: ${colors.teal};
-    right: -50px;
-    transition: 0.5s;
-  }
-  :hover:after,
-  :active:after,
-  :focus:after{
-    opacity: 1;
-    right: -28px;
-  }
+      content: "→";
+      font-size: 30px;
+      position: absolute;
+      opacity: 0;
+      top: 10px;
+      color: ${colors.teal};
+      right: -50px;
+      transition: 0.5s;
+    }
+    :hover:after,
+    :active:after,
+    :focus:after {
+      opacity: 1;
+      right: -28px;
+    }
   }
 
-  .email-logo{
+  .email-logo {
     width: 20%;
     height: 20%;
     text-align: right;
@@ -137,6 +137,14 @@ export const EmailLink = (props) => {
 export const Links = (props) => {
   return (
     <LinksContainer margin={props.margin}>
+      <a
+        href="mailto: jordanxcallaway@gmail.com"
+        className="link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon className="logo" icon={"envelope"} />
+      </a>
       <a
         href="https://www.linkedin.com/in/jordan-castillo/"
         className="link"

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "jordan-castillo",
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ]
+}

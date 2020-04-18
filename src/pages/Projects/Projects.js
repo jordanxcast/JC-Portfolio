@@ -144,7 +144,7 @@ function Projects(props) {
       <NextPage
         to="/contact"
         margin="80px auto 10px auto"
-        color={colors.mint}
+        color={colors.blue}
         hovercolor={colors.deeperpurple}
         hoverborder={colors.mint}
       >
