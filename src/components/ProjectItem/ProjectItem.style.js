@@ -189,7 +189,8 @@ export const ProjectDesc = styled.div`
     color: ${colors.outerspace};
     width: 100%;
     margin: 0px 0px 5px 0px;
-    > span {
+    > p {
+      margin: 0px auto 10px;
       color: ${colors.deeperpurple};
     }
   }

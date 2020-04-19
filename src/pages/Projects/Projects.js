@@ -112,9 +112,18 @@ function Projects(props) {
           img_alt="Project called Folkul's Interface"
           repo_href="https://github.com/kraigwilliams/motive-client"
           live_href="https://folkul.now.sh/"
-          stack={["React.js", "Node.js", "Express", "Knex", "PostgreSQL"]}
+          stack={[
+            "React.js",
+            "Styled Components",
+            "Node.js",
+            "Express",
+            "Knex",
+            "PostgreSQL",
+          ]}
           desc="Folkul is a social media concept for users to document, refine, and share sincere ideas."
-          subject="You can privately gather your thoughts - this can be small ideas to the next greatest invention. You can connect to other users and then share this idea with them - getting criticism, feedback and overall collaboration. Coming soon: custom user profiles, ReactNative conversion and additional features to improve the user experience."
+          subject="This is a tool where users can create a 'Thought' or a 'Topic.' A Thought can be anything from small ideas or memos to the greatest invention- they are any type of idea. A Topic is like a folder of these Thoughts, a way to organize and sort your creations. You can connect to other users and then share your ideas with them - getting criticism, feedback and overall collaboration on the Thoughts and Topics you have created."
+          reason="Current social media platforms we have today are based around trivial concepts - from overly saturated selfies to fleeting content with no true substance. The only value this brings to the user is distraction. I created this with the intention of building a socia media-esque platform that focuses on sincere ideas rather than a feed of mindless content that is so apparent today."
+          comingSoon="Coming soon: custom user profiles, ReactNative conversion and additional features to improve the user experience."
         />
 
         <ProjectItem
@@ -125,8 +134,10 @@ function Projects(props) {
           repo_href="https://github.com/jordanxcast/thoughtful-travels-client"
           live_href="https://thoughtful-travels-7oleygwkt.now.sh"
           stack={["React.js", "Node.js", "Express", "Knex", "PostgreSQL"]}
-          desc="Thoughtful Travels is a web application for users to set destination travels goal and reflect on their experience. "
-          subject="Thoughtful Travels aims to empower it’s users by giving them a place to organize their travel goals, set specific details on their goals and reflect on their experiences so the invaluable memories from their travels are documented."
+          desc="Thoughtful Travels is a web application for all travel-lovers to set destination travel goals and reflect on their experiences."
+          subject="Users can create their own account, create a Destination goal where they set their destination location, their goal date to visit and goal budget for their trip. For each Destination you can set a list of bucket list items to do at this destination and create journal entries to reflect on their experiences."
+          reason="Thoughtful Travels aims to empower it’s users by giving them a place to organize their travel goals, set specific details on their goals and reflect on their experiences so the invaluable memories from their travels are documented."
+          comingSoon="Coming soon: ability to upload photos for destinations, sort and edit existing journal entries."
         />
         <ProjectItem
           className="project-section"
@@ -136,8 +147,10 @@ function Projects(props) {
           repo_href="https://github.com/stronghearth/spaced-repetition"
           live_href="https://catalan-repetition.now.sh/register"
           stack={["React.js", "Node.js", "Express", "Knex", "PostgreSQL"]}
-          desc="Catalan Repetition is a platform where users can practice learning the Catalan language via the spaced repetition technique."
-          subject="Following the spaced repetition technique, the words you answer incorrectly will be repeated sooner. Furthermore, the more times you answer a word correctly, you will see it less frequently."
+          desc="Catalan Repetition is a platform where aspiring polygots can learn the Catalan language via the spaced repetition technique."
+          subject="Following the spaced repetition technique, the words answered incorrectly will be repeated sooner. Furthermore, the more times you answer a word correctly, you will see it less frequently."
+          reason="This tool is intended to help users learn a language through a proven and structured technique."
+          comingSoon="Future roadmap: ability to choose from different languages, more words to learn for each language, sharing scores and have a scor board to keep track of users progress."
         />
       </Section>
 

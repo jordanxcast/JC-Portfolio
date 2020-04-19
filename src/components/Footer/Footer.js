@@ -234,11 +234,21 @@ export const Footer = (props) => {
     >
       <FooterTop>
         <FooterLeft>
-          {/* <div>
-            <a href={Resume}>Resume</a>
-          </div> */}
           <div>
-            <a href=" mailto:jordanxcallaway@gmail.com">
+            <a
+              href="https://jordan-portfolio.s3-us-west-1.amazonaws.com/JordanCastillo_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </div>
+          <div>
+            <a
+              href=" mailto:jordanxcallaway@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               jordanxcallaway@gmail.com
             </a>
           </div>

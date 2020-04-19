@@ -36,9 +36,13 @@ function ProjectItem(props) {
         <div className="project-details">
           <ProjectDesc>
             <div className="description">
-              {props.desc}
+              <p>{props.desc}</p>
               <br />
-              <span> {props.subject}</span>
+              <p> {props.subject}</p>
+              <br />
+              <p>{props.reason}</p>
+              <br />
+              <p>{props.comingSoon}</p>
             </div>
           </ProjectDesc>
           <ProjectTech className="cl-effect-1">
