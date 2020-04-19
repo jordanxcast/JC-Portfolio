@@ -12,8 +12,6 @@ import { Skill } from "../../pages/Experience/Experience.style";
 import { colors } from "../../constant_styles";
 
 function ProjectItem(props) {
-  const [skills, setSkills] = useState(false);
-
   return (
     <ProjectItemWrapper>
       <ProjectTitle ref={props.refProp}>{props.proj_title}</ProjectTitle>
@@ -25,51 +23,45 @@ function ProjectItem(props) {
         }}
         className="tech-wrapper"
       >
+        <div className="project-links">
+          <ProjectLink href={props.repo_href} target="_blank">
+            Repo
+          </ProjectLink>
+          <ProjectLink href={props.live_href} target="_blank">
+            Live
+          </ProjectLink>
+        </div>
         <ProjectImage src={props.img_src} alt={props.img_alt} />
 
         <div className="project-details">
           <ProjectDesc>
             <div className="description">
-              {props.desc}
+              <p>{props.desc}</p>
               <br />
-              <span> {props.subject}</span>
+              <p> {props.subject}</p>
+              <br />
+              <p>{props.reason}</p>
+              <br />
+              <p>{props.comingSoon}</p>
             </div>
           </ProjectDesc>
           <ProjectTech className="cl-effect-1">
-            <ProjectLink
-              href={props.repo_href}
-              target="_blank"
-              className="repo"
-            >
-              Repo
-            </ProjectLink>
-            <ProjectLink href={props.live_href} target="_blank">
-              Live
-            </ProjectLink>
-
             <div className="tech">
-              <button
-                className={skills ? "tech-btn closed" : "tech-btn "}
-                onClick={() => setSkills(!skills)}
-              >
-                <FontAwesomeIcon icon="chevron-circle-right" size="2x" />
-              </button>
               <p>Tech</p>
+              <div className="skills">
+                {props.stack.map((item, idx) => (
+                  <Skill
+                    key={idx}
+                    color={colors.black}
+                    margin="5px 0px 5px 10px"
+                    fontsize="14px"
+                  >
+                    {item}
+                  </Skill>
+                ))}
+              </div>
             </div>
           </ProjectTech>
-          <div className="skills">
-            {skills &&
-              props.stack.map((item, idx) => (
-                <Skill
-                  key={idx}
-                  color={colors.black}
-                  margin="5px 0px 5px 10px"
-                  fontsize="12px"
-                >
-                  {item}
-                </Skill>
-              ))}
-          </div>
         </div>
       </div>
     </ProjectItemWrapper>

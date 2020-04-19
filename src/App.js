@@ -11,7 +11,7 @@ import Lifecycle from "./pages/Lifecycle/Lifecycle";
 function App() {
   return (
     <>
-      <NavBar />
+      <NavBar className='header'/>
       <main className="App">
         <Switch>
           <Route exact path="/" component={Home} />

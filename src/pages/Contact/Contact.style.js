@@ -67,6 +67,16 @@ export const ContactDescription = styled.div`
     color: ${colors.mint};
   }
 
+  .success-appear {
+    opacity: 1;
+    transition: all 250ms linear;
+  }
+
+  .success-exit {
+    opacity: 0;
+    transition: all 250ms linear;
+  }
+
   @media (min-width: 600px) {
     width: 80%;
     font-size: 18px;
@@ -87,6 +97,15 @@ export const ContactDescription = styled.div`
       font-size: 28px;
     }
   }
+`;
+export const SuccessfulSubmit = styled.div`
+  color: ${colors.vermilion};
+  text-align: center;
+  background: transparent;
+  margin: 30px auto;
+  border: 1px solid ${colors.vermilion};
+  padding: 10px;
+  width: fit-content;
 `;
 
 export const ContactLabel = styled.label`

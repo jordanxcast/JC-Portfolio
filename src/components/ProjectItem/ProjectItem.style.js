@@ -3,6 +3,7 @@ import { colors } from "../../constant_styles";
 
 export const ProjectItemWrapper = styled.div`
   width: 100%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -10,12 +11,54 @@ export const ProjectItemWrapper = styled.div`
   margin: 50px auto 0px;
   padding: 50px 30px;
   background-color: ${colors.offwhite};
+  .project-links {
+    display: flex;
+    width: 100%;
+    padding: 0px 0px 30px;
+
+    a::before,
+    a::after {
+      display: inline-block;
+      opacity: 0;
+      -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+      -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    a::before {
+      margin-right: 10px;
+      content: "[";
+      -webkit-transform: translateX(20px);
+      -moz-transform: translateX(20px);
+      transform: translateX(20px);
+    }
+
+    a::after {
+      margin-left: 10px;
+      content: "]";
+      -webkit-transform: translateX(-20px);
+      -moz-transform: translateX(-20px);
+      transform: translateX(-20px);
+    }
+
+    a:hover::before,
+    a:hover::after,
+    a:focus::before,
+    a:focus::after {
+      color: ${colors.vermilion};
+      opacity: 1;
+      -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      transform: translateX(0px);
+    }
+  }
   .project-details {
+    height: fit-content;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     width: 100%;
-    align-items: center;
+    /* align-items: center; */
   }
 
   .tech-wrapper {
@@ -49,10 +92,10 @@ export const ProjectItemWrapper = styled.div`
 export const ProjectTitle = styled.h2`
   font-size: 1.8em;
   color: ${colors.deeppurple};
-  letter-spacing: 0.01 em;
+  letter-spacing: 0.05em;
   font-weight: normal;
   text-align: center;
-  margin: 10px auto 40px auto;
+  margin: 10px auto 30px auto;
   @media (min-width: 600px) {
     width: 80%;
   }
@@ -80,26 +123,40 @@ export const ProjectImage = styled.img`
 
 export const ProjectTech = styled.div`
   display: flex;
-  margin-top: 30px;
-  align-items: center;
+  flex-direction: column;
+  align-items: end;
   justify-content: space-between;
   width: 100%;
+  height: fit-content;
   color: ${colors.darkpurple};
   padding: 0px;
   font-size: 16px;
+  margin-right: 10px;
 
   .tech {
     display: flex;
-    height: 35px;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: fit-content;
+    width: 80%;
+    margin: auto;
     margin-top: 0;
+    padding: 10px;
+    justify-content: space-around;
 
     > p {
-      margin: 0px;
-      height: fit-content;
       text-align: center;
+      margin: 0px auto;
+      width: fit-content;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      height: fit-content;
+      border-bottom: 0.5px solid black;
+    }
+    .skills {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
     }
   }
 
@@ -118,43 +175,6 @@ export const ProjectTech = styled.div`
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
   }
-
-  a::before,
-  a::after {
-    display: inline-block;
-    opacity: 0;
-
-    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
-    transition: transform 0.3s, opacity 0.2s;
-  }
-
-  a::before {
-    margin-right: 10px;
-    content: "[";
-    -webkit-transform: translateX(20px);
-    -moz-transform: translateX(20px);
-    transform: translateX(20px);
-  }
-
-  a::after {
-    margin-left: 10px;
-    content: "]";
-    -webkit-transform: translateX(-20px);
-    -moz-transform: translateX(-20px);
-    transform: translateX(-20px);
-  }
-
-  a:hover::before,
-  a:hover::after,
-  a:focus::before,
-  a:focus::after {
-    color: ${colors.vermilion};
-    opacity: 1;
-    -webkit-transform: translateX(0px);
-    -moz-transform: translateX(0px);
-    transform: translateX(0px);
-  }
 `;
 
 export const ProjectDesc = styled.div`
@@ -169,7 +189,8 @@ export const ProjectDesc = styled.div`
     color: ${colors.outerspace};
     width: 100%;
     margin: 0px 0px 5px 0px;
-    > span {
+    > p {
+      margin: 0px auto 10px;
       color: ${colors.deeperpurple};
     }
   }
@@ -182,7 +203,7 @@ export const ProjectLink = styled.a`
   text-align: center;
   height: 35px;
   line-height: 35px;
-  width: 30%;
+  width: 100%;
   padding-bottom: 10px;
   animation: blinking 5s infinite;
 

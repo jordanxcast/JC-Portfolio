@@ -81,7 +81,6 @@ export const ExperienceSection = styled.section`
   display: flex;
   flex-direction: column;
   width: 80%;
-
   margin: auto;
   align-items: center;
 `;
@@ -117,16 +116,17 @@ const Expand = styled.button`
   background: transparent;
   align-self: flex-end;
   font-size: 14px;
-  border: 1px solid ${colors.black};
-  color: ${colors.mint};
+  border: 1px solid ${colors.paleblue};
+  color: ${colors.teal};
   margin: auto auto 20px;
 
   :hover {
     cursor: pointer;
-    border: 1px solid ${colors.darkpurple};
+    border-radius: 10px;
+    /* border: 1px solid ${colors.darkpurple};
     color: ${colors.lightgrey};
     background-color: ${colors.slategrey};
-    opacity: 50%;
+    opacity: 50%; */
   }
 
   @media (min-width: 500px) {
@@ -201,7 +201,7 @@ export const ExperienceItem = (props) => {
         <div className="details">
           <div style={{ fontSize: "1.5em" }}>{props.company}</div>
 
-          <div>{props.position}</div>
+          <div style={{ color: colors.paleblue }}>{props.position}</div>
 
           <div style={{ color: colors.teal }}>{props.duration}</div>
         </div>
