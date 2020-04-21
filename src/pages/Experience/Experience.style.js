@@ -7,27 +7,28 @@ export const Skills = styled.section`
   display: flex;
   flex-direction: column;
   margin: 50px auto;
-  padding: 30px;
+  padding: 30px 0px;
   width: 80%;
   max-width: 1000px;
   color: ${colors.teal};
-  align-items: flex-start;
+  align-items: center;
   > h2 {
-    text-align: left;
+    text-align: center;
     color: ${colors.vermilion};
-    margin-left: 10px;
+    margin: 20px auto;
   }
   .skills-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 0px;
+    justify-content: center;
   }
 `;
 
 export const Skill = styled.div`
   padding: 5px;
-  margin: ${({ margin }) => (margin ? margin : "10px")};
+  margin: ${({ margin }) => (margin ? margin : "10px 10px 10px 0px")};
   width: fit-content;
   border: 1px solid ${colors.paleblue};
   color: ${({ color }) => (color ? color : colors.offwhite)};
@@ -111,6 +112,13 @@ export const ExperienceItemWrapper = styled.div`
 
   @media (min-width: 500px) {
     flex-direction: row;
+  }
+
+  @media (max-width: 500px) {
+    .details {
+      width: 100%;
+      text-align: center;
+    }
   }
 `;
 
