@@ -33,6 +33,7 @@ function Experience(props) {
     "Webpack",
     "PostgreSQL",
     "SCRUM",
+    "Agile",
     "Git",
     "GitHub",
     "Figma",
