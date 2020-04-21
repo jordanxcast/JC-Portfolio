@@ -66,7 +66,7 @@ function About(props) {
         <div className="bottom">
           <NextPage
             to="/experience"
-            margin="100px auto 0px auto"
+            margin="50px auto 0px auto"
             hovercolor={colors.vermilion}
             color={colors.offwhite}
           >

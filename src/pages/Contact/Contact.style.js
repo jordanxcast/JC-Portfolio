@@ -13,6 +13,11 @@ export const ContactForm = styled.form`
   box-shadow: 0px 0px 21px 5px ${colors.black};
   margin: 10px auto;
 
+  @media (min-width: 350px) {
+    width: 90%;
+    /* padding: 40px 20px 0px 20px; */
+  }
+
   @media (min-width: 600px) {
     width: 80%;
     padding: 40px 20px 0px 20px;
