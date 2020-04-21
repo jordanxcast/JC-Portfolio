@@ -128,6 +128,9 @@ const LinkContainer = styled.div`
   width: 50%;
   margin: 0px;
   align-items: center;
+  @media (max-width: 450px) {
+    width: 70%;
+  }
   @media (min-width: 900px) {
     width: 30%;
     margin: 0px;
@@ -197,10 +200,9 @@ const FooterLeft = styled.div`
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
   > div {
     font-size: 14px;
-    padding-bottom: 5px;
     > a {
       text-decoration: none;
       color: ${colors.slategrey};
