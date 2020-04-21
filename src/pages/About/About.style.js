@@ -57,15 +57,15 @@ export const AboutPageContainer = styled.div`
   }
 `;
 
-export const AboutSelf = styled.img`
-  border: 1px solid ${colors.black};
+export const AboutSelf = styled.div`
+  border: 2px solid ${colors.black};
   border-radius: 50%;
   width: 150px;
   height: 150px;
   margin: 10px auto 10px auto;
-  object-fit: cover;
-
-
+  background-image: ${({ src }) => (src ? `url(${src})` : "none")};
+  background-position: center;
+  background-size: cover;
 `;
 
 export const AboutBio = styled.div`

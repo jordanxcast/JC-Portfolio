@@ -255,7 +255,7 @@ export const Footer = (props) => {
         <FooterLeft>
           <div>
             <a
-              href="https://jordan-portfolio.s3-us-west-1.amazonaws.com/JordanCastillo_Resume.pdf"
+              href="https://jordan-portfolio.s3-us-west-1.amazonaws.com/Jordan_Castillo_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

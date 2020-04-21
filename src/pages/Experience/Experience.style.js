@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
 
@@ -95,6 +95,10 @@ export const ExperienceItemWrapper = styled.div`
   color: ${colors.mint};
   justify-content: space-between;
 
+  .expanded {
+    border-radius: 10px;
+  }
+
   .details {
     display: flex;
     flex-direction: column;
@@ -123,10 +127,6 @@ const Expand = styled.button`
   :hover {
     cursor: pointer;
     border-radius: 10px;
-    /* border: 1px solid ${colors.darkpurple};
-    color: ${colors.lightgrey};
-    background-color: ${colors.slategrey};
-    opacity: 50%; */
   }
 
   @media (min-width: 500px) {
@@ -141,18 +141,18 @@ const ExpandedSection = styled.ul`
   border-top: none;
   margin-top: 0px;
   padding: 20px;
-  color: ${colors.offwhite};
+  color: ${colors.mint};
   font-size: 14px;
   line-height: 20px;
-
+  width: 100%;
   > li {
     list-style: none;
-    margin: 10px 0px;
+    margin: 30px 0px;
   }
 
   @media (min-width: 900px) {
     > li {
-      margin: auto;
+      margin: 30px auto;
     }
   }
 `;
@@ -160,9 +160,11 @@ const ExpandedSection = styled.ul`
 const ExpItem = styled.div`
   width: 100%;
   max-width: 1000px;
+
   @media (min-width: 900px) {
     width: 80%;
   }
+
   .expanding-appear {
     opacity: 0;
     padding: 0px 20px;
@@ -178,18 +180,83 @@ const ExpItem = styled.div`
   .expanding-appear-done {
     color: ${colors.offwhite};
   }
-  .expanding-exit {
+  .collapsing-exit {
     opacity: 1;
     padding: 20px;
     font-size: 14px;
-    transition: all 600ms linear;
   }
-  .expanding-exit-active {
-    opacity: 0;
-    padding: 0px 20px;
+  .collapsing-exit-active {
+    opacity: 0.5;
+    padding: 0px;
     font-size: 0px;
-    color: ${colors.teal};
-    /* transition: all 600ms linear; */
+    transition: opacity 600ms;
+  }
+
+  .visible {
+    visibility: visible;
+    width: 100%;
+    opacity: 1;
+    max-width: 1000px;
+    padding: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    transition: visibility 0s linear 0s, opacity 1s, line-height 800ms;
+
+    /* for chrome and safari*/
+    /* -webkit-animation-duration: 1s;
+    -webkit-animation-name: slidein; */
+
+    /*for firefox*/
+    /* -moz-animation-duration: 1s;
+    -moz-animation-name: slidein; */
+
+    /* for opera*/
+    /* -o-animation-duration: 1s;
+    -o-animation-name: slidein; */
+
+    /* Standard syntax*/
+    /* animation-duration: 1s;
+    animation-name: slidein; */
+
+    @-webkit-keyframes slidedown {
+      0% {
+        opacity: 0;
+        padding: 0px 20px;
+        line-height: 0px;
+        color: ${colors.teal};
+      }
+
+      100% {
+        opacity: 1;
+        padding: 20px;
+        line-height: 20px;
+      }
+    }
+
+    @keyframes slidedown {
+      0% {
+        opacity: 0;
+        padding: 0px 20px;
+        line-height: 0px;
+        color: ${colors.teal};
+      }
+
+      100% {
+        opacity: 1;
+        padding: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .hidden {
+    visibility: hidden;
+    transition: visibility 0s linear 300ms, opacity 300ms, line-height 300ms;
+    max-height: 0px;
+    opacity: 0;
+    border: none;
+    /* padding: 0px 20px;*/
+    line-height: 0px;
   }
 `;
 
@@ -205,26 +272,39 @@ export const ExperienceItem = (props) => {
 
           <div style={{ color: colors.teal }}>{props.duration}</div>
         </div>
-        <Expand type="button" onClick={() => setExpand(!expand)}>
+        <Expand
+          type="button"
+          className={expand && "expanded"}
+          onClick={() => setExpand(!expand)}
+        >
           {expand ? "Less" : "More"}
         </Expand>
       </ExperienceItemWrapper>
-      {expand && (
-        <CSSTransition
+      {/* {
+        expand && ( */}
+      {/* <CSSTransition
           in={expand}
-          appear={expand}
-          exit={!expand}
-          timeout={600}
-          classNames="expanding"
-          unmountOnExit
-        >
-          <ExpandedSection>
-            {props.expanded.map((item, idx) => {
-              return <li key={idx}>{item}</li>;
-            })}
-          </ExpandedSection>
-        </CSSTransition>
-      )}
+            appear={expand}
+            exit={!expand}
+            onEnter={() => setExpand(true)}
+            onExited={() => setExpand(false)}
+            timeout={{ appear: 600, exit: 300 }}
+            classNames={{
+              exit: "collapsing-exit",
+              exitActive: "collapsing-exit-active",
+              exitDone: "collapsing-exit-done",
+              appear: "expanding-appear",
+              appearActive: "expanding-appear-active",
+              appearDone: "expanding-appear-done",
+            }}
+            unmountOnExit
+          > */}
+      <ExpandedSection className={expand ? "visible" : "hidden"}>
+        {props.expanded.map((item, idx) => {
+          return <li key={idx}>{item}</li>;
+        })}
+      </ExpandedSection>
+      {/* ) // </CSSTransition> */}
     </ExpItem>
   );
 };

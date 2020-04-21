@@ -31,7 +31,7 @@ function About(props) {
           </PageTitle>
 
           <AboutSelf
-            src={"https://jordan-portfolio.s3-us-west-1.amazonaws.com/Self.png"}
+            src="https://jordan-portfolio.s3-us-west-1.amazonaws.com/Self.png"
             alt="image of jordan castillo"
           />
         </div>
