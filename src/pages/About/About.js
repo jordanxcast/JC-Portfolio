@@ -14,13 +14,7 @@ function About(props) {
 
   return (
     <PageWrapper bgColor={colors.purplegrey} padding="30px 0px ">
-      {/* <BackgroundImg
-        src={
-          "https://jordan-portfolio.s3-us-west-1.amazonaws.com/Succulent.png"
-        }
-        alt="image taken by jordan castillo"
-      /> */}
-      <AboutPageContainer bgUrl="https://jordan-portfolio.s3-us-west-1.amazonaws.com/Succulent.png">
+      <AboutPageContainer bgUrl="https://jordan-portfolio.s3-us-west-1.amazonaws.com/LowTransparencySucculents.png">
         <div className="About-wrap">
           <PageTitle
             align="center"
@@ -65,7 +59,7 @@ function About(props) {
             When I am not writing code, I can be found spending time with my dog
             and family, cozied up reading a book with some coffee, or out
             enjoying some nature. I hope you enjoy taking a look around my
-            porfolio, and please don't hesistate to reach out or connect.
+            portfolio, and please don't hesitate to reach out or connect.
           </div>
         </AboutBio>
 
