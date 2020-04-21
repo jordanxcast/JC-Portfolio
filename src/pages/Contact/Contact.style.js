@@ -97,6 +97,12 @@ export const ContactDescription = styled.div`
       font-size: 28px;
     }
   }
+
+  @media (max-width: 200px) {
+    > p {
+      overflow-wrap: break-word;
+    }
+  }
 `;
 export const SuccessfulSubmit = styled.div`
   color: ${colors.vermilion};

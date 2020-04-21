@@ -17,6 +17,7 @@ import { writeContactsData } from "../../server/server";
 
 function Contact(props) {
   const [successfulSubmit, setSuccessfulSubmit] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -62,20 +63,13 @@ function Contact(props) {
     message.value = "";
   }
   return (
-    <PageWrapper
-      align="right"
-      bgColor={colors.black}
-      padding="30px 10px 5px 10px"
-      className="kwes-form"
-      no-reload
-      success-message="Thank you for reaching out!"
-    >
+    <PageWrapper bgColor={colors.black} padding="30px 0px 5px">
       <PageTitle margin="0px auto 30px auto" color={colors.vermilion}>
         Get In Touch
       </PageTitle>
       <ContactDescription margin="10px auto">
         Please reach out if you would like to collaborate on a project, learn
-        more about my work, or just get to know eachother. <br />
+        more about my work, or just get to know each other. <br />
         <p>I am also currently open to new opportunities.</p>
         {/* <div>
         <EmailLink />
@@ -148,12 +142,7 @@ function Contact(props) {
         Here are some other places you can find me.
       </ContactDescription>
       <Links margin="50px auto 100px" />
-      <Footer
-        left="-10px"
-        bottom="-5px"
-        maxwidth="100vw"
-        margin="60px 0px 0px"
-      />
+      <Footer left="0px" bottom="-5px" maxwidth="100vw" margin="60px 0px 0px" />
     </PageWrapper>
   );
 }

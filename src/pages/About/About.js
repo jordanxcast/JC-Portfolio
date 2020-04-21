@@ -1,15 +1,10 @@
 import React, { useEffect } from "react";
 import { colors } from "../../constant_styles";
 import { PageWrapper, PageTitle, NextPage } from "../../styles";
-import {
-  AboutPageContainer,
-  AboutSelf,
-  AboutBio,
-  BackgroundImg,
-} from "./About.style";
+import { AboutPageContainer, AboutSelf, AboutBio } from "./About.style";
 import { Footer } from "../../components/Footer/Footer";
-import Succulent from "../../images/Succulent.png";
-import Self from "../../images/Self.png";
+// import Succulent from "../../images/Succulent.png";
+// import Self from "../../images/Self.png";
 
 function About(props) {
   useEffect(() => {
@@ -18,9 +13,14 @@ function About(props) {
   document.title = "Jordan Castillo - About";
 
   return (
-    <PageWrapper bgColor={colors.purplegrey}>
-      <BackgroundImg src={Succulent} alt="image taken by jordan castillo" />
-      <AboutPageContainer>
+    <PageWrapper bgColor={colors.purplegrey} padding="30px 0px ">
+      {/* <BackgroundImg
+        src={
+          "https://jordan-portfolio.s3-us-west-1.amazonaws.com/Succulent.png"
+        }
+        alt="image taken by jordan castillo"
+      /> */}
+      <AboutPageContainer bgUrl="https://jordan-portfolio.s3-us-west-1.amazonaws.com/Succulent.png">
         <div className="About-wrap">
           <PageTitle
             align="center"
@@ -30,7 +30,10 @@ function About(props) {
             About Me
           </PageTitle>
 
-          <AboutSelf src={Self} alt="image of jordan castillo" />
+          <AboutSelf
+            src={"https://jordan-portfolio.s3-us-west-1.amazonaws.com/Self.png"}
+            alt="image of jordan castillo"
+          />
         </div>
 
         <AboutBio>
@@ -47,14 +50,14 @@ function About(props) {
             Having an innate passion for curiosity, creativity, and reasoning, I
             strive to consistently improve myself and the world that surrounds
             me. My first true inspiration growing up was photography - it was an
-            artistic outlet that allowed me to create and strategically bringing
-            an idea to life. Software development has been an integration of my
+            artistic outlet that allowed me to create and strategically bring an
+            idea to life. Software development has been an integration of my
             love for creativity and my root desire to methodically overcome
             obstacles. There are pieces of all the things I love sprinkled
-            throught my work. Often my designs are inspired by the nature around
-            me, photographs I have taken or ones I admire. The notion that I can
-            build tools that will help people and solve problems on a large
-            scale is what drives me to rise up the challenges I face and
+            throughout my work. Often my designs are inspired by the nature
+            around me, photographs I have taken or ones I admire. The notion
+            that I can build tools that will help people and solve problems on a
+            large scale is what drives me to rise up the challenges I face and
             constantly learn as much as I can.
           </div>
           <div>
@@ -62,7 +65,7 @@ function About(props) {
             When I am not writing code, I can be found spending time with my dog
             and family, cozied up reading a book with some coffee, or out
             enjoying some nature. I hope you enjoy taking a look around my
-            porfolio, and please doon't hesistate to reach out or connect.
+            porfolio, and please don't hesistate to reach out or connect.
           </div>
         </AboutBio>
 
@@ -77,7 +80,7 @@ function About(props) {
           </NextPage>
         </div>
       </AboutPageContainer>
-      <Footer left="-30px" bottom="-30px" margintop="0px" maxwidth="100vw" />
+      <Footer left="0px" bottom="-30px" maxwidth="100vw" margintop="0px" />
     </PageWrapper>
   );
 }

@@ -91,7 +91,7 @@ export const ProjectItemWrapper = styled.div`
 
 export const ProjectTitle = styled.h2`
   font-size: 1.8em;
-  color: ${colors.deeppurple};
+  color: ${colors.vermilion};
   letter-spacing: 0.05em;
   font-weight: normal;
   text-align: center;
@@ -110,6 +110,10 @@ export const ProjectTitle = styled.h2`
 
   @media (min-width: 1000px) {
     width: 50%;
+  }
+  @media (max-width: 300px) {
+    font-size: 16px;
+    overflow-wrap: break-word;
   }
 `;
 

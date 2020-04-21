@@ -7,6 +7,8 @@ export const NavWrapper = styled.header`
   flex-direction: row;
   height: 70px;
   width: -webkit-fill-available;
+  min-width: 100%;
+  margin: 0px;
   padding: 20px 20px;
   justify-content: space-between;
   align-items: center;
@@ -14,7 +16,6 @@ export const NavWrapper = styled.header`
   font-size: 1.2em;
   background-color: ${colors.black};
   color: ${colors.mint};
-  /* box-shadow: 0px 4px 6px ${colors.slategrey}; */
 `;
 
 export const Logo = styled(Link)`
@@ -89,11 +90,11 @@ export const MobileButton = styled.div`
   align-content: center;
   margin: 0;
 
-  @media screen and (max-width: 700px) {
-    display: block;
-  }
-
   :hover {
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 700px) {
+    display: block;
   }
 `;

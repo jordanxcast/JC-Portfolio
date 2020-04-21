@@ -138,8 +138,11 @@ const FooterContainer = styled.div`
   background-color: ${({ bgcolor }) => (bgcolor ? bgcolor : colors.lightgrey)};
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  max-width: ${({ maxwidth }) => (maxwidth ? maxwidth : "100%")};
+  width: 100%;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+  min-width: 100%;
   height: fit-content;
   z-index: inherit;
   position: relative;
@@ -188,6 +191,7 @@ const FooterBottom = styled.div`
 
 const FooterLeft = styled.div`
   width: fit-content;
+  max-width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -221,6 +225,21 @@ const FooterLeft = styled.div`
       border-right: 1px solid ${colors.offwhite};
     }
   }
+
+  @media (max-width: 300px) {
+    .email {
+      font-size: 12px;
+      flex-wrap: wrap;
+      overflow-wrap: break-word;
+    }
+  }
+
+  /* @media (max-width: 200px) {
+    padding: 5px;
+    width: 20%;
+    font-size: 12px;
+    flex-wrap: wrap;
+  } */
 `;
 
 export const Footer = (props) => {
@@ -245,6 +264,7 @@ export const Footer = (props) => {
           </div>
           <div>
             <a
+              className="email"
               href=" mailto:jordanxcallaway@gmail.com"
               target="_blank"
               rel="noopener noreferrer"

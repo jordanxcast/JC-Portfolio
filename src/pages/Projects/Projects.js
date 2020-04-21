@@ -56,6 +56,11 @@ const Overview = styled.div`
   .overview-icon {
     color: ${colors.deeperpurple};
   }
+
+  @media (max-width: 300px) {
+    font-size: 16px;
+    overflow-wrap: break-word;
+  }
 `;
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
@@ -72,7 +77,7 @@ function Projects(props) {
 
   return (
     <PageWrapper bgColor={colors.lightgrey} padding="30px 0px">
-      <PageTitle align="center" padding="30px 10px 10px 0px">
+      <PageTitle align="center" padding="30px 10px 10px 10px">
         Projects
       </PageTitle>
       <Overview>

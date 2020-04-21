@@ -197,19 +197,19 @@ const MobileNavigation = styled.nav`
   }
 
   /* for chrome and safari*/
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-name: slidein;
 
   /*for firefox*/
-  -moz-animation-duration: 2s;
+  -moz-animation-duration: 1s;
   -moz-animation-name: slidein;
 
   /* for opera*/
-  -o-animation-duration: 2s;
+  -o-animation-duration: 1s;
   -o-animation-name: slidein;
 
   /* Standard syntax*/
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-name: slidein;
   /* animation: slidein 1s ease-in; */
 

@@ -11,58 +11,52 @@ export const PageWrapper = styled.div`
   height: fit-content;
   min-height: -webkit-fill-available;
   width: -webkit-fill-available;
-  margin: auto;
-  padding: ${({ padding }) => (padding ? padding : "30px 30px")};
+  min-width: 100%;
+  margin: 0px;
+  padding: ${({ padding }) => (padding ? padding : "30px 0px")};
   position: absolute;
   top: 65;
   z-index: 1;
   background-color: ${(props) => (props ? props.bgColor : colors.offwhite)};
-  /* align-content: ${({ alignContent }) =>
-    alignContent ? alignContent : "center"};    */
 
 
-  .kw-form-wrapper{
+  /*.kw-form-wrapper {
     .kw-form-wrapper {
-    > [id^='credit-'] {
-    > [id^='credit-link-'] {
-      color: ${colors.black} !important;  
-      max-width: 0px; 
-      position: absolute;
-      left: -100px !important;  
-      z-index: -11 !important;
-      opacity: 0 !important;
-      }     
+      > [id^="credit-"] {
+        > [id^="credit-link-"] {
+          color: ${colors.black} !important;
+          max-width: 0px;
+          position: absolute;
+          left: -100px !important;
+          z-index: -11 !important;
+          opacity: 0 !important;
+        }
+      }
+      [class*="kw-message"] {
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+      }
+      .kw-message-error {
+        text-align: center !important;
+        margin: auto !important;
+        background: transparent !important;
+        border: 1px solid !important;
+        color: ${colors.vermilion};
+      }
+      .kw-message-110293.kw-message-warning {
+        text-align: center !important;
+        margin: auto !important;
+        background: transparent !important;
+        border: 1px solid !important;
+        color: ${colors.deeperpurple};
+        > a {
+          color: ${colors.deeperpurple};
+          text-decoration: none;
+        }
+      }
     }
-    [class*="kw-message"] {
-    text-align: center;
-    width: fit-content;
-    margin: auto;
-   
-  }
-   .kw-message-error {
-    text-align: center !important;
-    margin: auto !important;
-    background: transparent !important;
-    border: 1px solid !important;
-    color: ${colors.vermilion};
-  }
-  .kw-message-110293.kw-message-warning {
-    text-align: center !important;
-    margin: auto !important;
-    background: transparent !important;
-    border: 1px solid !important;
-    color: ${colors.deeperpurple};
-
-    > a {
-      color: ${colors.deeperpurple};
-      text-decoration: none;
-    }
-  }
-}
-  }
-
-
-
+  }*/
 `;
 
 export const Section = styled.section`
@@ -113,7 +107,6 @@ export const Section = styled.section`
 
 export const PageTitle = styled.h1`
   color: ${({ color }) => (color ? color : colors.grey)};
-  /* font-size: 30px; */
   text-align: ${(props) => (props.align ? props.align : "center")};
   padding: ${({ padding }) => (padding ? padding : "10px 10px 10px 0px")};
   margin: ${({ margin }) => (margin ? margin : "auto")};
@@ -121,6 +114,19 @@ export const PageTitle = styled.h1`
   width: 80%;
   @media (min-width: 600px) {
     text-align: ${(props) => (props.align ? props.align : "center")};
+  }
+
+  @media (max-width: 300px) {
+    width: 100%;
+    flex-wrap: wrap;
+    /* font-size: 16px; */
+    padding: 0px;
+  }
+
+  @media (max-width: 200px) {
+    padding: 5px;
+    overflow-wrap: break-word;
+    flex-wrap: wrap;
   }
 `;
 
@@ -138,6 +144,17 @@ export const NextPage = styled(Link)`
   position: relative;
   transition: 0.5s;
   outline: none;
+  @media (max-width: 300px) {
+    width: 50%;
+    flex-wrap: wrap;
+    padding: 5px;
+  }
+  @media (max-width: 200px) {
+    padding: 5px;
+    width: 20%;
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
 
   > button {
     background: transparent;
@@ -157,8 +174,6 @@ export const NextPage = styled(Link)`
   > button:active {
     cursor: pointer;
     color: ${({ hovercolor }) => (hovercolor ? hovercolor : colors.vermilion)};
-    /* border: 1px solid
-      ${({ hoverborder }) => (hoverborder ? hoverborder : colors.offwhite)}; */
     > button {
       color: ${({ hovercolor }) =>
         hovercolor ? hovercolor : colors.vermilion};
@@ -166,8 +181,6 @@ export const NextPage = styled(Link)`
   }
 
   :after {
-    /* font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900 !important; */
     content: "→";
     font-size: 30px;
     position: absolute;
@@ -224,58 +237,3 @@ export const Down = styled(Button)`
     }
   }
 `;
-
-/* 
-// export const SectionTitle = styled.h3 `
-//   margin-top: 1.5em;
-//   margin-bottom: 0.5em;
-// `;
-
-// export const Paragraph = styled.p `
-//   white-space: pre-wrap;
-// `;
-
-// export const Pill = styled.span `
-//   display: inline-block;
-//   margin-right: 0.75em;
-//   margin-bottom: 0.75rem;
-//   padding: 0.5rem 1rem;
-//   background-color: ${blue[20]};
-//   color: ${blue[70]};
-//   border: 3px solid ${blue[70]};
-//   border-radius: 2px;
-//   font-weight: bold;
-// `;
-
-//HEADER STYLES
-// export const HeaderContainer = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-
-//   @media (max-width: 640px) {
-//     display: ${({ isHome }) => (!isHome ? 'none' : 'flex')}; 
-//     flex-direction: row;
-//   }
-// `;
-
-// export const Header = styled.div `
-//   display: flex;
-
-//   @media(max-width: 640px) {
-//     flex-direction: row;
-//   }
-// `;
-
-// export const Image = styled.img `
-//   width: 200px;
-//   margin-right: 1em;
-//   border-radius: 2px;
-// `;
-
-// export const ViewResumeLink = styled.a `
-//   display: flex;
-//   text-decoration: none;
-//   padding: 0.75em 1em;
-//   font-weight: bold;
-//   align-items: center;
-// `; */
