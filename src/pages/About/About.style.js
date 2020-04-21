@@ -34,10 +34,10 @@ export const AboutPageContainer = styled.div`
   @media (max-width: 500px) {
     background: ${({ bgUrl }) =>
       bgUrl ? `url(${bgUrl}) no-repeat fixed content-box content-box` : "none"};
-    -webkit-background-size: 100% 100%;
+    -webkit-background-size: 100% 50%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
-    background-size: 100% 100%;
+    background-size: 100% 50%;
   }
 `;
 
