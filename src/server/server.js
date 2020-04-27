@@ -22,3 +22,38 @@ export const writeContactsData = (full_name, email, subject, message, cb) => {
     }
   );
 };
+
+export const writeBlogEntry = (newEntry) => {
+  const { blogTitle, blogSummary, blogDate, blogContent } = newEntry;
+  return database
+    .ref("blogEntries/" + newEntry.blogTitle)
+    .set({ blogTitle, blogSummary, blogDate, blogContent });
+};
+
+export function readBlogEntries(returnCallback) {
+  database
+    .ref("blogEntries/")
+    .once("value")
+    .then(function (snapshot) {
+      let blogArr = blogEntriesToArr(snapshot);
+      console.log(blogArr, "blog arr in read blog entries");
+      return returnCallback(blogArr);
+    });
+}
+
+function blogEntriesToArr(snapshot) {
+  var returnArr = [];
+
+  snapshot.forEach(function (childSnapshot) {
+    var item = childSnapshot.val();
+    item.key = childSnapshot.key;
+
+    returnArr.push(item);
+  });
+
+  return returnArr;
+}
+
+export const writeLogin = (user, pass, successfulUser) => {
+  //write login data to firebase
+};

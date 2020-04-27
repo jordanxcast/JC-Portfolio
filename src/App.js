@@ -7,11 +7,15 @@ import Contact from "./pages/Contact/Contact";
 import Experience from "./pages/Experience/Experience";
 import About from "./pages/About/About";
 import Lifecycle from "./pages/Lifecycle/Lifecycle";
+import Admin from "./pages/Admin/Admin";
+import Blog from "./pages/Blog/Blog";
+import BlogEntry from "./pages/BlogEntry/BlogEntry";
+import BlogPost from "./pages/BlogPost/BlogPost";
 
 function App() {
   return (
     <>
-      <NavBar className='header'/>
+      <NavBar className="header" />
       <main className="App">
         <Switch>
           <Route exact path="/" component={Home} />
@@ -20,6 +24,10 @@ function App() {
           <Route path="/projects" component={Projects} />
           <Route path="/contact" component={Contact} />
           <Route path="/portfolio/lifecycle" component={Lifecycle} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/blog-entry" component={BlogEntry} />
+          <Route path="/jc-blog" component={Blog} />
+          <Route path="/blog/:blog_id" component={BlogPost} />
         </Switch>
       </main>
     </>

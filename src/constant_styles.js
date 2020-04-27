@@ -2,8 +2,8 @@ export const colors = {
   mint: "#8BAAAD",
   teal: "#B9E3C6",
   purplegrey: "#7F7B82",
-  offwhite: "#DEDEDE",
-  white: "#ffffff",
+  offwhite: "#DFE0E2",
+  white: "#FDFFFC",
   black: "#303838",
   lightgrey: "#CCCCCC",
   grey: "#28262C",
@@ -16,4 +16,5 @@ export const colors = {
   vermilion: "#ED6A5A",
   deeperpurple: "#49516F",
   darkpurple: "#36213E",
+  jet: "#292F36",
 };

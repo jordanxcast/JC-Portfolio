@@ -14,7 +14,6 @@ const Overview = styled.div`
   flex-direction: column;
   padding: 30px;
   width: 100%;
-
   height: fit-content;
   margin: 50px auto 60px;
   justify-content: space-between;

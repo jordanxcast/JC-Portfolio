@@ -7,9 +7,30 @@ import App from "./App";
 import PortfolioContextProvider from "./PortfolioContext";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faMobileAlt, faDrawPolygon, faLaptopCode, faChevronDown, faChevronCircleRight, faEnvelope, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheckSquare,
+  faMobileAlt,
+  faDrawPolygon,
+  faLaptopCode,
+  faChevronDown,
+  faChevronCircleRight,
+  faEnvelope,
+  faArrowRight,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab, faCheckSquare, faMobileAlt, faDrawPolygon, faLaptopCode, faChevronDown, faChevronCircleRight, faEnvelope, faArrowRight);
+library.add(
+  fab,
+  faCheckSquare,
+  faMobileAlt,
+  faDrawPolygon,
+  faLaptopCode,
+  faChevronDown,
+  faChevronCircleRight,
+  faEnvelope,
+  faArrowRight,
+  faArrowLeft
+);
 
 ReactDOM.render(
   <BrowserRouter>

@@ -14,6 +14,8 @@ const PortfolioContextProvider = (props) => {
 
   // ])
 
+  const [blogPosts, setBlogPosts] = useState([]);
+
   const [experienceItems] = useState([
     {
       id: 1,
@@ -23,7 +25,7 @@ const PortfolioContextProvider = (props) => {
       expanded: [
         "After realizing my growing interest in software could not be ignored, I decided to join Thinkful's Full Stack Engineering Immersion program. At Thinkful, I was exposed to a multitude of concepts and grew my technical skill-set further than I imagined within the 5-month timeframe. However, even with the growth I've seen in myself, one thing about software development that I love to consider is that, of course, the learning never stops. Every concept that I've seemed to conquer along the way opens up hundreds of more paths to explore and learn further. And that is absolutely exhilarating to me.",
         "I consider myself a full-stack engineer and have a great interest in both front-end and back-end development. On the client-side, I have always enjoyed elegant UX/UI designs, and having a strong eye for detail, I retain the confidence in taking high-fidelity mocks and writing maintainable code to produce powerful interfaces. Having previous experience working with a front-end dev team, Thinkful was my first experience with back-end work. I was very eager to dive into this aspect of programming and learn more about the area I was less familiar with. I was immediately intrigued by the structure of server-side code and enjoyed working with databases the most. From designing database schemas to creating queries that extract specific configurations of data - the more I worked with it, the more ideas I had to use my learnings for other projects.",
-        "Overall, at Thinkful I earned industry best practices and practical software development standards. On the front-end, a focus of HTML5, CSS3, JavaScript, jQuery, and React.js. On the back-end, a focus on Node.js, Express, PostgreSQL and Mocha, Chai, Supertest for testing. I created and deployed mobile-first applications while learning new languages and frameworks by collaborating with senior web developers.",
+        "Overall, at Thinkful I learned industry best practices and practical software development standards. On the front-end, a focus of HTML5, CSS3, JavaScript, jQuery, and React.js. On the back-end, a focus on Node.js, Express, PostgreSQL and Mocha, Chai, Supertest for testing. I created and deployed mobile-first applications while learning new languages and frameworks by collaborating with senior web developers.",
         "Upon what I learned through our curriculum, I dove deeper into the concepts we were exposed to. I became familiar with working with other powerful techniques such as React Hooks, Styled Components, AWS S3 storage bucks, and others. This is just the beginning, and I am already exploring more technologies to expand my skill-set. Technologies I am currently interested in learning are ReactNative, AngularJS, and Ruby On Rails. And let's face it, anything that presents itself while on my journey forward.",
       ],
     },
@@ -55,7 +57,9 @@ const PortfolioContextProvider = (props) => {
   ]);
 
   return (
-    <PortfolioContext.Provider value={{ experienceItems }}>
+    <PortfolioContext.Provider
+      value={{ experienceItems, blogPosts, setBlogPosts }}
+    >
       {props.children}
     </PortfolioContext.Provider>
   );
