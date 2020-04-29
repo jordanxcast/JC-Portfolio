@@ -66,6 +66,16 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
 
+  .giphy-embed {
+    max-width: 480px;
+    min-width: 80px;
+
+    @media (max-width: 400px) {
+      width: 80%;
+      height: fit-content;
+    }
+  }
+
   .project-section {
     /* for chrome and safari*/
     -webkit-animation-duration: 2s;

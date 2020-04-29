@@ -11,6 +11,7 @@ import Admin from "./pages/Admin/Admin";
 import Blog from "./pages/Blog/Blog";
 import BlogEntry from "./pages/BlogEntry/BlogEntry";
 import BlogPost from "./pages/BlogPost/BlogPost";
+import NotFoundPage from './pages/Utils/NotFoundPage'
 
 function App() {
   return (
@@ -26,8 +27,9 @@ function App() {
           <Route path="/portfolio/lifecycle" component={Lifecycle} />
           <Route path="/admin" component={Admin} />
           <Route path="/blog-entry" component={BlogEntry} />
-          <Route path="/jc-blog" component={Blog} />
+          <Route path="/blog" component={Blog} />
           <Route path="/blog/:blog_id" component={BlogPost} />
+          <Route component={NotFoundPage} />
         </Switch>
       </main>
     </>
