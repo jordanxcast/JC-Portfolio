@@ -6,18 +6,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const LinksContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 60%;
   max-width: 900px;
   justify-content: space-between;
   margin: ${({ margin }) => (margin ? margin : "50px auto")};
   height: fit-content;
   align-items: center;
   @media (min-width: 400px) {
-    width: 100%;
+    width: 90%;
   }
 
   @media (min-width: 500px) {
-    width: 100%;
+    width: 90%;
   }
 
   @media (min-width: 600px) {
@@ -163,14 +163,14 @@ export const Links = (props) => {
         <FontAwesomeIcon className="logo" icon={["fab", "github"]} />
       </a>
 
-      <a
+      {/* <a
         href="https://stackoverflow.com/users/13343529/jordan-castillo?tab=profile"
         className="link"
         target="_blank"
         rel="noopener noreferrer"
       >
         <FontAwesomeIcon className="logo" icon={["fab", "stack-overflow"]} />
-      </a>
+      </a> */}
 
       <a
         href="https://www.instagram.com/jordanxcast/"
@@ -190,14 +190,14 @@ export const Links = (props) => {
         <FontAwesomeIcon className="logo" icon={["fab", "angellist"]} />
       </a>
 
-      <a
+      {/* <a
         href="https://trello.com/jordanxcast"
         className="link"
         target="_blank"
         rel="noopener noreferrer"
       >
         <FontAwesomeIcon className="logo" icon={["fab", "trello"]} />
-      </a>
+      </a> */}
     </LinksContainer>
   );
 };

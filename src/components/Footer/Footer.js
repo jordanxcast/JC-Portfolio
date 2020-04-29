@@ -80,7 +80,7 @@ const FooterLinks = (props) => {
         <FontAwesomeIcon className="footer-logo" icon={["fab", "github"]} />
       </a>
 
-      <a
+      {/* <a
         href="https://stackoverflow.com/users/13343529/jordan-castillo?tab=profile"
         className="footer-link"
         target="_blank"
@@ -90,7 +90,7 @@ const FooterLinks = (props) => {
           className="footer-logo"
           icon={["fab", "stack-overflow"]}
         />
-      </a>
+      </a> */}
 
       <a
         href="https://www.instagram.com/jordanxcast/"
@@ -110,14 +110,14 @@ const FooterLinks = (props) => {
         <FontAwesomeIcon className="footer-logo" icon={["fab", "angellist"]} />
       </a>
 
-      <a
+      {/* <a
         href="https://trello.com/jordanxcast"
         className="footer-link"
         target="_blank"
         rel="noopener noreferrer"
       >
         <FontAwesomeIcon className="footer-logo" icon={["fab", "trello"]} />
-      </a>
+      </a> */}
     </FooterLinksContainer>
   );
 };

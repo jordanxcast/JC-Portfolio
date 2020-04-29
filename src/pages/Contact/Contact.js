@@ -71,10 +71,7 @@ function Contact(props) {
         Please reach out if you would like to collaborate on a project, learn
         more about my work, or just get to know each other. <br />
         <p>I am also currently open to new opportunities.</p>
-        {/* <div>
-        <EmailLink />
-      </div> */}
-        {/* {successfulSubmit && ( */}
+
         <CSSTransition
           in={successfulSubmit}
           timeout={600}
@@ -84,14 +81,10 @@ function Contact(props) {
         >
           <SuccessfulSubmit>Thank you for reaching out! </SuccessfulSubmit>
         </CSSTransition>
-        {/* )} */}
+
       </ContactDescription>
 
       <ContactForm
-        // method="POST"
-        // no-reload
-        // success-message="Thank you for reaching out!"
-        // action="https://kwes.io/api/foreign/forms/O8pqpOWh7CpKS52NUXsk"
         id="contact-form"
         onSubmit={(ev) => {
           handleFormSubmission(ev);

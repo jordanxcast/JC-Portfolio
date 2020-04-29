@@ -208,7 +208,7 @@ const ExpItem = styled.div`
     padding: 20px;
     line-height: 20px;
     font-size: 14px;
-    transition: visibility 0s linear 0s, opacity 1s, line-height 800ms;
+    transition: visibility 0s linear 0s, opacity 0.5s, line-height 200ms;
 
     /* for chrome and safari*/
     /* -webkit-animation-duration: 1s;

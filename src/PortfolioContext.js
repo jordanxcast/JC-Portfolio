@@ -54,6 +54,18 @@ const PortfolioContextProvider = (props) => {
         "Working with this team was my first look into the world of entrepreneurship. I witnessed first-hand what it took to grow your own business and the dynamic environment that constitutes it. Gaining this experience shaped my future, as I fell in love with this challenging environment and continued to chase more opportunities like it.",
       ],
     },
+    {
+      id: 4,
+      company: "Texas State University",
+      position: "Business Management, Concentration in Entrepreneurial Studies",
+      duration: "July 2018",
+      expanded: [
+        "Starting my college career as a photography major, I realized that my interest in the Entrepreneurial world would better fit my time and available resources. During my time at Texas State, I earned a degree in Business Management, with a Concentration in Entrepreneurial Studies. I gained experience in creating business plans, learning best business practices, consulting with local businesses to improve business development and growth, and so much more.",
+        "From juice bars to coffee shops, I have always worked with and contributed to small, locally owned businesses, both throughout high school and college. Leveraging my entrepreneurial learnings, I consistently stepped up and pushed the boundaries of my typical job titles in the environments that I worked. Hired as a barista? Let's see how we can increase the efficiency in our operations, and deliver an undeniably loved product to our customers. Joining the teams that I've worked with, I always got the most joy and reward out of elevating the people I was surrounded by, pushing them to be the best versions of themselves and exploring the idea of finding what makes them truly happy in life.",
+        "Reflecting on my experience throughout these entrepreneurial courses and real-world environments, there is an endless amount of invaluable knowledge I had learned. It was the start of having the concept of problem-solving constantly in my head. Learning to think from the perspective of solving real-world problems that society is facing, you acquire an awareness that truly helped shaped me into the person I am today. I also witnessed first-hand the significance of listening to others' ideas and points of view. There was never an instance where you start with one idea and see it all the way through. It's a long, windy road full of pivots and obstacles. Being open to the people you are surrounded by is essential, especially when you get into the flow of leveraging the different expertise that each person can bring to the table.",
+        "In the end, my university career shaped my future in ways that I didn't realize. Although I don't have a technical degree, the underlying lessons and skills that I acquired have empowered me and been supplemental in many ways on this technical journey.",
+      ],
+    },
   ]);
 
   return (
