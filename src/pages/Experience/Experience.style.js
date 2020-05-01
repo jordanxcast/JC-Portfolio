@@ -95,6 +95,7 @@ export const ExperienceItemWrapper = styled.div`
   margin: 40px auto 0px auto;
   color: ${colors.mint};
   justify-content: space-between;
+  transition: all 600ms ease;
 
   .expanded {
     border-radius: 10px;
@@ -168,6 +169,11 @@ const ExpandedSection = styled.ul`
 const ExpItem = styled.div`
   width: 100%;
   max-width: 1000px;
+
+  .item-expanded {
+    border-bottom: 1px solid ${colors.slategrey};
+    transition: all 200ms ease;
+  }
 
   @media (min-width: 900px) {
     width: 80%;
@@ -272,7 +278,7 @@ export const ExperienceItem = (props) => {
   const [expand, setExpand] = useState(false);
   return (
     <ExpItem>
-      <ExperienceItemWrapper>
+      <ExperienceItemWrapper className={expand && "item-expanded"}>
         <div className="details">
           <div style={{ fontSize: "1.5em" }}>{props.company}</div>
 

@@ -32,8 +32,7 @@ function About(props) {
 
         <AboutBio>
           <div>
-            Currently enrolled at Thinkful, I am cultivating my path to graduate
-            from the Engineering Immersion Full Stack program and set my
+            Recently graduated from the Full Stack Engineering Immersion program at Thinkful, I am eager to set my
             software developer career in motion. I have always loved solving
             problems. I pursued that interest to my first position after college
             as a Product Manager for a start-up and this is where I was first
