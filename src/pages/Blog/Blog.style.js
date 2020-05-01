@@ -1,14 +1,33 @@
 import React from "react";
+// import Moment from "moment";
+// import "moment-timezone";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
 import { Link } from "react-router-dom";
 
+const formatDate = (date) => {
+  let rawDate = new Date(date);
+  let options = {
+    // weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    // hour: "2-digit",
+    // minute: "2-digit",
+  };
+
+  let newDate = rawDate.toLocaleString("en-us", options);
+
+  return newDate;
+};
+
 export const BlogPreviewItem = (props) => {
+  const formattedDate = formatDate(props.date);
   return (
     <BlogPreview>
       <PreviewTop className="blog-title">
         <BlogTitle>{props.title}</BlogTitle>
-        <BlogDate>{props.date}</BlogDate>
+        <BlogDate>{formattedDate}</BlogDate>
       </PreviewTop>
 
       <BlogDescription className="blog-summary">
@@ -47,12 +66,13 @@ const BlogPreview = styled.div`
   min-height: 200px;
   width: 80%;
   margin: 30px auto 20px;
-  background-color: #313638;
-  /* background-color: #0c0f0a; */
+  background-color: ${colors.slategrey};
+  /* background-color: #313638; */
   padding: 10px 30px;
   text-align: center;
   align-items: center;
-  border: 2px solid #313638;
+  /* border: 2px solid #313638; */
+  border: 2px solid ${colors.slategrey};
 
   box-shadow: 0px 3px 15px 1px rgba(66, 75, 84, 1);
   opacity: 1;
@@ -72,14 +92,13 @@ const BlogPreview = styled.div`
   :hover,
   :focus,
   :active {
-    transition: visibility 0s linear 0.5s, background-color 0.5s linear,
-      width 0.5s linear, box-shadow 0.5s linear;
-
     cursor: pointer;
     border: 3px solid ${colors.mint};
     background-color: ${colors.slategrey};
     color: ${colors.paleblue};
     box-shadow: none;
+    transition: visibility 0s linear 0.5s, background-color 0.5s linear,
+      width 0.5s linear, box-shadow 0.5s linear;
     .blog-title {
       display: none;
       visibility: hidden;

@@ -33,12 +33,12 @@ function Home(props) {
         </h2>
       </Header>
       <NextPage
-        to="/projects"
+        to="/about"
         margin="35% auto 10px auto"
         top="90%"
         color={colors.mint}
       >
-        <button type='button'>recent projects</button>
+        <button type="button">about me</button>
       </NextPage>
     </PageWrapper>
   );

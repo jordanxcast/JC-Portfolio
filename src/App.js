@@ -27,9 +27,9 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/portfolio/lifecycle" component={Lifecycle} />
           <Route path="/admin" component={Admin} />
-          {/* <PrivateRoute path="/blog-entry" component={BlogEntry} /> */}
-          <Route path="/blog-entry" component={BlogEntry} />
-          <Route path="/blog" component={Blog} />
+          <PrivateRoute path="/blog-entry" component={BlogEntry} />
+          {/* <Route path="/blog-entry" component={BlogEntry} /> */}
+          <Route exact path="/blog" component={Blog} />
           <Route path="/blog/:blog_id" component={BlogPost} />
           <Route component={NotFoundPage} />
         </Switch>

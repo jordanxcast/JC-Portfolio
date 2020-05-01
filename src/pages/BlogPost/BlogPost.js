@@ -15,11 +15,29 @@ import {
   BlogCodeBlock,
 } from "./BlogPost.style";
 
+const formatDate = (date) => {
+  let rawDate = new Date(date);
+  let options = {
+    // weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    // hour: "2-digit",
+    // minute: "2-digit",
+  };
+
+  let newDate = rawDate.toLocaleString("en-us", options);
+
+  return newDate;
+};
+
 export default function BlogPost(props) {
   const { blogPosts } = useContext(PortfolioContext);
   const [currentBlog, setCurrentBlog] = useState({});
   const [blogContent, setBlogContent] = useState([]);
   const blogId = props.match.params.blog_id;
+
+  const blogDate = formatDate(currentBlog.blogDate);
 
   useEffect(() => {
     blogPosts.map(function (blog, idx) {
@@ -34,18 +52,18 @@ export default function BlogPost(props) {
     const currentContent = currentBlog.blogContent;
     console.log(currentContent, "current blog content");
     setBlogContent(currentContent);
-  }, [blogPosts, currentBlog.blogContent, blogId]);
+  }, [blogPosts, currentBlog.blogContent, blogId, currentBlog, props]);
 
   return (
-    <PageWrapper padding="30px 0px" >
-      <BackToBlogs to={`/jc-blog`}>
+    <PageWrapper padding="30px 0px">
+      <BackToBlogs to={`/blog`}>
         <FontAwesomeIcon icon="arrow-left" />
       </BackToBlogs>
       <PageTitle margin="0px auto" color={colors.vermilion}>
         {currentBlog.blogTitle}
       </PageTitle>
       <BlogOverview>
-        <BlogDate>{currentBlog.blogDate}</BlogDate>
+        <BlogDate>{blogDate}</BlogDate>
         <BlogSummary>{currentBlog.blogSummary}</BlogSummary>
       </BlogOverview>
       <BlogContent>
