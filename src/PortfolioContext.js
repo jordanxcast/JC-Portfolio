@@ -16,6 +16,8 @@ const PortfolioContextProvider = (props) => {
 
   const [blogPosts, setBlogPosts] = useState([]);
 
+  const [adminLogin, setAdminLogin] = useState(false)
+
   const [experienceItems] = useState([
     {
       id: 1,
@@ -50,7 +52,7 @@ const PortfolioContextProvider = (props) => {
         "After graduating high school, I was fortunate enough to join a photography team consisting of inspiring, brilliant and creative women who fueled their life and businesses with their unwavering passion for photography. ",
         "With a niche target market, Lot 5 focused their client base to serve many private elementary, middle and high schools in the Houston area. Their high-quality and customized services from a small, talented team gave them an edge over the large photography businesses most schools use which results in mediocre, cookie-cutter photographs.",
         "The same team also owned a studio in Sawyer Heights, called Fill In The Blank, which I was also given the opportunity to help run. Fill In The Blank was a beautiful, indoor open space studio available to being rent out for photography shoots, social events, meetings, etc.",
-        "During my time there, I assisted in photoshoots as well as business structure. Being a faced-paced business and having a variety of moving parts, I helped coordinate clients and staff systematically to allow our events to run efficiently. I learned and exhibited versed communication skills with partners, patrons and co-workers to establish a well-functioning workplace.",
+        "During my time there, I assisted in photoshoots as well as business structure. Being a fast-paced business and having a multitude of moving parts, I helped coordinate clients and staff systematically to allow our events to run efficiently. I learned and exhibited versed communication skills with partners, patrons and co-workers to establish a well-functioning workplace.",
         "Working with this team was my first look into the world of entrepreneurship. I witnessed first-hand what it took to grow your own business and the dynamic environment that constitutes it. Gaining this experience shaped my future, as I fell in love with this challenging environment and continued to chase more opportunities like it.",
       ],
     },
@@ -70,7 +72,7 @@ const PortfolioContextProvider = (props) => {
 
   return (
     <PortfolioContext.Provider
-      value={{ experienceItems, blogPosts, setBlogPosts }}
+      value={{ experienceItems, blogPosts, setBlogPosts, adminLogin, setAdminLogin }}
     >
       {props.children}
     </PortfolioContext.Provider>

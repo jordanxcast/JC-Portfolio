@@ -1,8 +1,10 @@
 /* eslint-disable eqeqeq */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { PageWrapper, PageTitle } from "../../styles";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
+import { PortfolioContext } from "../../PortfolioContext";
+
 
 const AdminLabel = styled.label`
   color: ${colors.slategrey};
@@ -78,6 +80,7 @@ const LoginError = styled.div`
 
 export default function Admin(props) {
   const [success, setSuccess] = useState(null);
+  const { setAdminLogin } = useContext(PortfolioContext)
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -86,8 +89,9 @@ export default function Admin(props) {
     const { username, password } = e.target;
     const user = username.value;
     const pass = password.value;
-    console.log(user_name, user_pw, pass);
+    // console.log(user_name, user_pw, pass);
     if (user == user_name && pass == user_pw) {
+      setAdminLogin(true);
       setSuccess(true);
       const { history } = props;
       history.push("/blog-entry");

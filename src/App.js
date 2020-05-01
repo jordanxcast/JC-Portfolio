@@ -11,7 +11,8 @@ import Admin from "./pages/Admin/Admin";
 import Blog from "./pages/Blog/Blog";
 import BlogEntry from "./pages/BlogEntry/BlogEntry";
 import BlogPost from "./pages/BlogPost/BlogPost";
-import NotFoundPage from './pages/Utils/NotFoundPage'
+import NotFoundPage from "./pages/Utils/NotFoundPage";
+import PrivateRoute from "./pages/Utils/PrivateRoute";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/portfolio/lifecycle" component={Lifecycle} />
           <Route path="/admin" component={Admin} />
+          {/* <PrivateRoute path="/blog-entry" component={BlogEntry} /> */}
           <Route path="/blog-entry" component={BlogEntry} />
           <Route path="/blog" component={Blog} />
           <Route path="/blog/:blog_id" component={BlogPost} />
