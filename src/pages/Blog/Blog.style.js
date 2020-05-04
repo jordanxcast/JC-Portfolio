@@ -60,25 +60,25 @@ const PreviewTop = styled.div`
 `;
 
 const BlogPreview = styled.div`
+  border: 3px solid ${colors.mint};
+  background-color: ${colors.slategrey};
+  box-shadow: none;
+  transition: visibility 0s linear 0.5s, background-color 0.5s linear,
+    width 0.5s linear, box-shadow 0.5s linear;
+
   display: flex;
   flex-direction: column;
   height: 200px;
   min-height: 200px;
   width: 80%;
   margin: 30px auto 20px;
-  background-color: ${colors.slategrey};
+
   /* background-color: #313638; */
   padding: 10px 30px;
   text-align: center;
   align-items: center;
   /* border: 2px solid #313638; */
-  border: 2px solid ${colors.slategrey};
 
-  box-shadow: 0px 3px 15px 1px rgba(66, 75, 84, 1);
-  opacity: 1;
-
-  transition: visibility 0s linear 0.5s, background-color 0.5s linear,
-    opacity 0.5s ease-in, width 0.5s linear, box-shadow 0.2s linear;
   .blog-summary {
     visibility: hidden;
     display: none;
@@ -93,12 +93,15 @@ const BlogPreview = styled.div`
   :focus,
   :active {
     cursor: pointer;
-    border: 3px solid ${colors.mint};
-    background-color: ${colors.slategrey};
     color: ${colors.paleblue};
-    box-shadow: none;
+
+    border: 2px solid ${colors.slategrey};
+    background-color: ${colors.slategrey};
+    box-shadow: 0px 3px 15px 1px rgba(66, 75, 84, 1);
+    opacity: 1;
+
     transition: visibility 0s linear 0.5s, background-color 0.5s linear,
-      width 0.5s linear, box-shadow 0.5s linear;
+      opacity 0.5s ease-in, width 0.5s linear, box-shadow 0.2s linear;
     .blog-title {
       display: none;
       visibility: hidden;

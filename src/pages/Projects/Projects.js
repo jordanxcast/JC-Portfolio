@@ -133,10 +133,10 @@ function Projects(props) {
         <ProjectItem
           className="project-section"
           proj_title="Thoughtful Travels"
-          img_src={ThoughtfulTravels}
+          img_src="https://jordan-portfolio.s3-us-west-1.amazonaws.com/TT-LandingPage.png"
           img_alt="Project called Thoughtful Travel's Interface"
           repo_href="https://github.com/jordanxcast/thoughtful-travels-client"
-          live_href="https://thoughtful-travels-7oleygwkt.now.sh"
+          live_href="https://thoughtful-travels.now.sh/"
           stack={[
             "React.js",
             "Context API",
@@ -144,6 +144,7 @@ function Projects(props) {
             "Express",
             "Knex",
             "PostgreSQL",
+            "JWT Authentication",
           ]}
           desc="Thoughtful Travels is a web application for all travel-lovers to set destination travel goals and reflect on their experiences."
           subject="Users can create their own account, create a Destination goal where they set: their destination location, their goal date to visit and goal budget for their trip. For each Destination users can set a list of bucket list items to do at this destination and create journal entries to reflect on their experiences."
@@ -165,7 +166,7 @@ function Projects(props) {
             "Knex",
             "PostgreSQL",
           ]}
-          desc="Catalan Cards is a platform where aspiring polygots can learn the Catalan language via the spaced repetition technique."
+          desc="Catalan Cards is a platform where aspiring polyglots can learn the Catalan language via the spaced repetition technique."
           subject="Following the spaced repetition technique, the words answered incorrectly will be repeated sooner. Furthermore, the more times you answer a word correctly, you will see it less frequently."
           reason="This tool is intended to help users learn a language through a proven and structured technique."
           comingSoon="Future roadmap: ability to choose from different languages, more words to learn for each language, sharing scores and have a score board to keep track of users progress."
