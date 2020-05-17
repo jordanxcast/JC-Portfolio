@@ -45,7 +45,7 @@ function Contact(props) {
     const contact_email = email.value;
     const contact_subject = subject.value;
     const contact_message = message.value;
-    console.log(full_name, contact_email, contact_subject, contact_message);
+    // console.log(full_name, contact_email, contact_subject, contact_message);
 
     // send value to write in firebase database
     writeContactsData(

@@ -106,7 +106,9 @@ const MobileNavigationLinks = (props) => {
         Contact
       </MenuLink>
 
-      {/* <MenuLink className="nav-links">Lifecycle</MenuLink> */}
+      <MenuLink className="nav-links active" to="/blog" onClick={() => cb()}>
+        Blog
+      </MenuLink>
     </NavLinks>
   );
 };
@@ -132,7 +134,9 @@ const Navigation = (props) => {
         Contact
       </MenuLink>
 
-      {/* <MenuLink className="nav-links">Blog</MenuLink> */}
+      <MenuLink className="nav-links active" to="/blog">
+        Blog
+      </MenuLink>
     </NavLinks>
   );
 };

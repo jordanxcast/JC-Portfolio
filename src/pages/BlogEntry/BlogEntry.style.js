@@ -109,6 +109,17 @@ export const NewCodeBlock = styled.textarea`
   text-align: center;
 `;
 
+export const NewSubtitle = styled.input`
+  border: 1px solid ${colors.purplegrey};
+  border-radius: 5px;
+  width: 80%;
+  margin: 10px 0px;
+  padding: 10px 30px;
+  font-size: 14px;
+  text-align: center;
+  color: ${colors.vermilion};
+`;
+
 export const EntryForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -201,6 +212,20 @@ export const AddImages = styled.button`
 `;
 
 export const AddCode = styled.button`
+  background: transparent;
+  padding: 5px 10px;
+  font-size: 14px;
+  margin-right: 10px;
+  border: 1px solid ${colors.teal};
+
+  :hover,
+  :focus {
+    cursor: pointer;
+    border: 1px solid ${colors.vermilion};
+  }
+`;
+
+export const AddSubtitle = styled.button`
   background: transparent;
   padding: 5px 10px;
   font-size: 14px;

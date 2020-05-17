@@ -13,6 +13,7 @@ import {
   BlogTextarea,
   BlogImage,
   BlogCodeBlock,
+  BlogSubtitle,
 } from "./BlogPost.style";
 
 const formatDate = (date) => {
@@ -86,6 +87,8 @@ export default function BlogPost(props) {
                   code={contentItem.value}
                 ></BlogCodeBlock>
               );
+            } else if (contentItem.type === "subtitle") {
+              return <BlogSubtitle key={idx}>{contentItem.value}</BlogSubtitle>;
             } else {
               return "";
             }

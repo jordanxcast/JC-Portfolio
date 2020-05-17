@@ -11,6 +11,7 @@ import {
   NewTextarea,
   NewImage,
   NewCodeBlock,
+  NewSubtitle,
   AddNew,
   AddElement,
   AddTextarea,
@@ -18,6 +19,7 @@ import {
   AddCode,
   ElementSelection,
   AddBlogEntry,
+  AddSubtitle,
 } from "./BlogEntry.style";
 
 export default function BlogEntry(props) {
@@ -45,6 +47,12 @@ export default function BlogEntry(props) {
     setContent(values);
   };
 
+  const handleAddSubtitle = () => {
+    const values = [...content];
+    values.push({ type: "subtitle", value: null, position: values.length });
+    setContent(values);
+  };
+
   const handleChange = (ev, i) => {
     const values = [...content];
     values[i].value = ev.target.value;
@@ -62,8 +70,9 @@ export default function BlogEntry(props) {
     const { blog_title, blog_summary } = ev.target;
     const title = blog_title.value;
     const summary = blog_summary.value;
+    console.log(title, summary);
     let dateCreated = new Date().toLocaleDateString();
-    console.log(dateCreated);
+    // console.log(dateCreated);
 
     const newEntry = {
       blogTitle: title,
@@ -76,7 +85,7 @@ export default function BlogEntry(props) {
     writeBlogEntry(newEntry);
 
     const { history } = props;
-    history.push("/jc-blog");
+    history.push("/blog");
   };
 
   return (
@@ -120,6 +129,19 @@ export default function BlogEntry(props) {
                   type="url"
                   placeholder="image url"
                 ></NewImage>
+              </EntryContent>
+            );
+          } else if (element.type === "subtitle") {
+            return (
+              <EntryContent
+                deleteCallback={() => handleRemove(idx)}
+                key={`${element.type}-${idx}`}
+              >
+                <NewSubtitle
+                  key={`${element.type}-${idx}`}
+                  onChange={(ev) => handleChange(ev, idx)}
+                  placeholder="Topic change"
+                ></NewSubtitle>
               </EntryContent>
             );
           } else if (element.type === "code-block") {
@@ -176,6 +198,14 @@ export default function BlogEntry(props) {
               >
                 Code
               </AddCode>
+              <AddSubtitle
+                type="button"
+                onClick={(ev) => {
+                  handleAddSubtitle(ev);
+                }}
+              >
+                Subtitle
+              </AddSubtitle>
             </ElementSelection>
           )}
         </AddElement>

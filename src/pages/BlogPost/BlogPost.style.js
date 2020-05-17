@@ -60,7 +60,8 @@ export const BackToBlogs = styled(Link)`
   text-decoration: none;
   line-height: 14px;
   font-size: 14px;
-  border: 1px solid ${colors.deeppurple};
+  /* border: 1px solid ${colors.deeppurple}; */
+  border: none;
   border-radius: 20px;
   color: ${colors.deeppurple};
 
@@ -91,3 +92,9 @@ export const BlogCodeBlock = (props) => {
     </CodeBlock>
   );
 };
+
+export const BlogSubtitle = styled.h3`
+  color: ${colors.vermilion};
+  font-size: 20px;
+  margin-bottom: 0px;
+`;

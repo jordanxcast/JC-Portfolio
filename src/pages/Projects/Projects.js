@@ -154,7 +154,7 @@ function Projects(props) {
         <ProjectItem
           className="project-section"
           proj_title="Catalan Cards"
-          img_src={CatalanRepetition}
+          img_src='https://jordan-portfolio.s3-us-west-1.amazonaws.com/Catalan_Cards_Preview.png'
           img_alt="Project called Catalan Repetition's Interface"
           repo_href="https://github.com/stronghearth/spaced-repetition"
           live_href="https://catalan-repetition.now.sh/register"
@@ -165,6 +165,7 @@ function Projects(props) {
             "Express",
             "Knex",
             "PostgreSQL",
+            "Cypress.io"
           ]}
           desc="Catalan Cards is a platform where aspiring polyglots can learn the Catalan language via the spaced repetition technique."
           subject="Following the spaced repetition technique, the words answered incorrectly will be repeated sooner. Furthermore, the more times you answer a word correctly, you will see it less frequently."
