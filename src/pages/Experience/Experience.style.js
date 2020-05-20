@@ -216,22 +216,6 @@ const ExpItem = styled.div`
     font-size: 14px;
     transition: visibility 0s linear 0s, opacity 0.5s, line-height 200ms;
 
-    /* for chrome and safari*/
-    /* -webkit-animation-duration: 1s;
-    -webkit-animation-name: slidein; */
-
-    /*for firefox*/
-    /* -moz-animation-duration: 1s;
-    -moz-animation-name: slidein; */
-
-    /* for opera*/
-    /* -o-animation-duration: 1s;
-    -o-animation-name: slidein; */
-
-    /* Standard syntax*/
-    /* animation-duration: 1s;
-    animation-name: slidein; */
-
     @-webkit-keyframes slidedown {
       0% {
         opacity: 0;
