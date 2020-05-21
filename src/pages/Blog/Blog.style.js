@@ -68,7 +68,7 @@ const BlogPreview = styled.div`
 
   display: flex;
   flex-direction: column;
-  height: 150px;
+  height: fit-content;
   min-height: 150px;
   width: 80%;
   margin: 30px auto 20px;
@@ -115,7 +115,7 @@ const BlogPreview = styled.div`
       top: 0;
       left: 0;
       opacity: 1;
-      width: 80%;
+      width: 100%;
     }
   }
 `;

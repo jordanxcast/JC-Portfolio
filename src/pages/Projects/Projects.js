@@ -194,7 +194,7 @@ function Projects(props) {
         <button type="button">let's collaborate!</button>
       </NextPage>
 
-      {
+      {/* {
         <BackToTop
           onClick={scrollTop}
           position="relative"
@@ -202,7 +202,7 @@ function Projects(props) {
         >
           <FontAwesomeIcon icon="arrow-up" />
         </BackToTop>
-      }
+      } */}
       <Footer bgcolor={colors.offwhite} bottom="-30px" left="0px" />
     </PageWrapper>
   );
