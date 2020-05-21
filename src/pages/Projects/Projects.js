@@ -1,12 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Footer } from "../../components/Footer/Footer";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
-import { PageWrapper, Section, PageTitle, NextPage, Down } from "../../styles";
+import {
+  PageWrapper,
+  Section,
+  PageTitle,
+  NextPage,
+  Down,
+  BackToTop,
+} from "../../styles";
 import ProjectItem from "../../components/ProjectItem/ProjectItem";
-// import ThoughtfulTravels from "../../images/ThoughtfulTravels1.png";
-// import CatalanRepetition from "../../images/CatalanRepetition.png";
 import Folkul from "../../images/Folkul.png";
 
 const Overview = styled.div`
@@ -73,6 +78,11 @@ function Projects(props) {
 
   const myRef = useRef(null);
   const executeScroll = () => scrollToRef(myRef);
+
+  //executes scroll to the top of the page
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <PageWrapper bgColor={colors.lightgrey} padding="30px 0px">
@@ -183,6 +193,16 @@ function Projects(props) {
       >
         <button type="button">let's collaborate!</button>
       </NextPage>
+
+      {
+        <BackToTop
+          onClick={scrollTop}
+          position="relative"
+          background="transparent"
+        >
+          <FontAwesomeIcon icon="arrow-up" />
+        </BackToTop>
+      }
       <Footer bgcolor={colors.offwhite} bottom="-30px" left="0px" />
     </PageWrapper>
   );

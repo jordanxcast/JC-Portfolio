@@ -247,3 +247,35 @@ export const Down = styled(Button)`
     }
   }
 `;
+
+export const BackToTop = styled.button`
+  position: ${({ position }) => (position ? position : "fixed")};
+  width: fit-content;
+  bottom: 20px;
+  left: 20px;
+  align-items: center;
+  height: 30px;
+  justify-content: center;
+  z-index: 1000;
+  line-height: 14px;
+  font-size: 14px;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+  border-radius: 10px;
+  background: ${({ background }) => (background ? background : "auto")};
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  :hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+`;

@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PortfolioContext } from "../../PortfolioContext";
 import { colors } from "../../constant_styles";
-import { PageWrapper, PageTitle } from "../../styles";
+import { PageWrapper, PageTitle, BackToTop } from "../../styles";
 import {
   BlogOverview,
   BlogSummary,
@@ -39,6 +39,7 @@ export default function BlogPost(props) {
   const blogId = props.match.params.blog_id;
 
   const blogDate = formatDate(currentBlog.blogDate);
+  const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
     blogPosts.map(function (blog, idx) {
@@ -54,6 +55,23 @@ export default function BlogPost(props) {
     console.log(currentContent, "current blog content");
     setBlogContent(currentContent);
   }, [blogPosts, currentBlog.blogContent, blogId, currentBlog, props]);
+
+  //listener sets scroll button to be visible or not
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 400) {
+      setShowScroll(false);
+    }
+  };
+
+  //executes scroll to the top of the page
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  //simple event listener to show or hide the scroll to top button
+  window.addEventListener("scroll", checkScrollTop);
 
   return (
     <PageWrapper padding="30px 0px">
@@ -94,6 +112,11 @@ export default function BlogPost(props) {
             }
           })}
       </BlogContent>
+      {showScroll && (
+        <BackToTop onClick={scrollTop}>
+          <FontAwesomeIcon icon="arrow-up" />
+        </BackToTop>
+      )}
     </PageWrapper>
   );
 }

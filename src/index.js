@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-
 import "./index.css";
 import App from "./App";
 import PortfolioContextProvider from "./PortfolioContext";
@@ -17,6 +16,7 @@ import {
   faEnvelope,
   faArrowRight,
   faArrowLeft,
+  faArrowUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -29,7 +29,8 @@ library.add(
   faChevronCircleRight,
   faEnvelope,
   faArrowRight,
-  faArrowLeft
+  faArrowLeft,
+  faArrowUp
 );
 
 ReactDOM.render(

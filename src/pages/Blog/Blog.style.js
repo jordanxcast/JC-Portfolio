@@ -39,7 +39,7 @@ export const BlogPreviewItem = (props) => {
 };
 
 const BlogTitle = styled.div`
-  font-size: 22px;
+  font-size: 28px;
   width: 100%;
   margin: 0px auto;
   flex-wrap: wrap;
@@ -68,8 +68,8 @@ const BlogPreview = styled.div`
 
   display: flex;
   flex-direction: column;
-  height: 200px;
-  min-height: 200px;
+  height: 150px;
+  min-height: 150px;
   width: 80%;
   margin: 30px auto 20px;
 
