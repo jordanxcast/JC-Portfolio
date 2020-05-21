@@ -52,7 +52,7 @@ export default function BlogPost(props) {
       return "";
     });
     const currentContent = currentBlog.blogContent;
-    console.log(currentContent, "current blog content");
+    // console.log(currentContent, "current blog content");
     setBlogContent(currentContent);
   }, [blogPosts, currentBlog.blogContent, blogId, currentBlog, props]);
 

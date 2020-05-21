@@ -12,10 +12,10 @@ export const writeContactsData = (full_name, email, subject, message, cb) => {
     },
     function (error) {
       if (error) {
-        console.log("an error occurred when trying to submit");
+        // console.log("an error occurred when trying to submit");
         cb("error", error);
       } else {
-        console.log("successfully submitted");
+        // console.log("successfully submitted");
         //data save successully
         cb("successful");
       }
@@ -36,7 +36,7 @@ export function readBlogEntries(returnCallback) {
     .once("value")
     .then(function (snapshot) {
       let blogArr = blogEntriesToArr(snapshot);
-      console.log(blogArr, "blog arr in read blog entries");
+      // console.log(blogArr, "blog arr in read blog entries");
       return returnCallback(blogArr);
     });
 }

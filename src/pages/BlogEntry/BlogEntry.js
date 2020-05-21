@@ -70,7 +70,7 @@ export default function BlogEntry(props) {
     const { blog_title, blog_summary } = ev.target;
     const title = blog_title.value;
     const summary = blog_summary.value;
-    console.log(title, summary);
+    // console.log(title, summary);
     let dateCreated = new Date().toLocaleDateString();
     // console.log(dateCreated);
 
@@ -81,7 +81,7 @@ export default function BlogEntry(props) {
       blogContent: content || {},
     };
     setBlogEntry(newEntry);
-    console.log(blogEntry, "blog entry!");
+    // console.log(blogEntry, "blog entry!");
     writeBlogEntry(newEntry);
 
     const { history } = props;
