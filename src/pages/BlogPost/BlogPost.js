@@ -42,17 +42,16 @@ export default function BlogPost(props) {
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 65);
     blogPosts.map(function (blog, idx) {
       let currentBlogPost;
       if (idx == blogId) {
         currentBlogPost = blog;
         setCurrentBlog(currentBlogPost);
       }
-      window.scrollTo(0, 65);
       return "";
     });
     const currentContent = currentBlog.blogContent;
-    // console.log(currentContent, "current blog content");
     setBlogContent(currentContent);
   }, [blogPosts, currentBlog.blogContent, blogId, currentBlog, props]);
 

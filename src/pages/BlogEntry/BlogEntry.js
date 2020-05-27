@@ -27,7 +27,7 @@ export default function BlogEntry(props) {
 
   const [content, setContent] = useState([]);
 
-  const [blogEntry, setBlogEntry] = useState({});
+  const [setBlogEntry] = useState({});
 
   const handleAddTextarea = () => {
     const values = [...content];
@@ -70,9 +70,7 @@ export default function BlogEntry(props) {
     const { blog_title, blog_summary } = ev.target;
     const title = blog_title.value;
     const summary = blog_summary.value;
-    // console.log(title, summary);
     let dateCreated = new Date().toLocaleDateString();
-    // console.log(dateCreated);
 
     const newEntry = {
       blogTitle: title,

@@ -49,6 +49,7 @@ const BlogTitle = styled.div`
 const BlogDate = styled.div`
   font-size: 16px;
   color: ${colors.mint};
+  margin-top: 10px;
 `;
 
 const PreviewTop = styled.div`

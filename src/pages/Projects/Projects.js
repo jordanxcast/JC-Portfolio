@@ -1,16 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Footer } from "../../components/Footer/Footer";
 import styled from "styled-components";
 import { colors } from "../../constant_styles";
-import {
-  PageWrapper,
-  Section,
-  PageTitle,
-  NextPage,
-  Down,
-  BackToTop,
-} from "../../styles";
+import { PageWrapper, Section, PageTitle, NextPage, Down } from "../../styles";
 import ProjectItem from "../../components/ProjectItem/ProjectItem";
 import Folkul from "../../images/Folkul.png";
 
@@ -78,11 +71,6 @@ function Projects(props) {
 
   const myRef = useRef(null);
   const executeScroll = () => scrollToRef(myRef);
-
-  //executes scroll to the top of the page
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <PageWrapper bgColor={colors.lightgrey} padding="30px 0px">
@@ -182,6 +170,25 @@ function Projects(props) {
           reason="This tool is intended to help users learn a language through a proven and structured technique."
           comingSoon="Future roadmap: ability to choose from different languages, more words to learn for each language, sharing scores and have a score board to keep track of users progress."
         />
+        <ProjectItem
+          className="project-section"
+          proj_title="Kaiya Quinn Website"
+          img_src="https://jordan-portfolio.s3-us-west-1.amazonaws.com/KQ-website-ss.png"
+          img_alt="Project called KQ's website Interface"
+          repo_href="https://github.com/mattman240/KQ-website"
+          live_href="https://kaiya-quinn.herokuapp.com/"
+          stack={[
+            "React.js",
+            "Styled Components",
+            // "Javascript",
+            "Heroku",
+            "AWS",
+          ]}
+          desc="This is the result of humans having too much free time during quarantine and love their dog more than anything. This project was made in less than 48 hours with Matthew Mullen"
+          subject=""
+          reason=""
+          comingSoon="The first of a project where one website is completed every weekend for a month. Feel free to checkout the Blog to read updates on this project."
+        />
       </Section>
 
       <NextPage
@@ -193,16 +200,6 @@ function Projects(props) {
       >
         <button type="button">let's collaborate!</button>
       </NextPage>
-
-      {/* {
-        <BackToTop
-          onClick={scrollTop}
-          position="relative"
-          background="transparent"
-        >
-          <FontAwesomeIcon icon="arrow-up" />
-        </BackToTop>
-      } */}
       <Footer bgcolor={colors.offwhite} bottom="-30px" left="0px" />
     </PageWrapper>
   );
